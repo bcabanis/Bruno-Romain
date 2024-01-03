@@ -1,0 +1,652 @@
+
+  
+  .background {
+    /* width: 793px; */
+    /* height: 1080px;  */
+    background-image: url("../img/parisnight.png");
+    padding: 16px 32px;
+    background-size: contain;
+    
+    
+    
+  }
+  
+.labeletape {
+    font-family: "Avenir-Black-03.ttf";
+    color: #FCFCFC;
+    margin-bottom: 4px;
+    
+
+  }
+
+  .etape3 h1, p {
+    backdrop-filter: blur(50px);
+    /* background-color: #333; */
+    margin-top: 61px;
+    padding: 20px;
+    border-radius: 12px;
+
+  }
+
+  .etape3 {
+    font-family: "Avenir-Black-03.ttf";
+    color: #FCFCFC;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 460px;
+    margin-top: 34px;
+    
+    }
+
+
+.etape3 h1 {
+    padding-left: 45px;
+}
+  
+  
+  .inscription{
+    padding: 80px 0;
+  }
+  
+  .cardsub {
+    width: 460px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  
+  .cardsub h1 {
+    font-family: Oswald;
+    font-size: 2.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+  }
+  
+  .subform {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    flex-direction: column;
+  }
+  
+  .button .socialLink {
+    color: var(--2-e-2-a-2-a-black, #2E2A2A);
+    font-family: "Avenir";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+  }
+  
+  
+  .inputsub {
+    
+    font-family: "Avenir";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+    text-decoration: none;
+    margin-top: 32px;
+    position: relative;
+  
+  }
+  
+  .inputsub input {
+    width: 100% !important;
+    height: 56px;
+  }
+  
+  fieldset .inputsub label {
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 44px;
+    right: 17px;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .password-toggle i {
+    font-size: 16px;
+    color: #999;
+  }
+  
+  .password-toggle:hover i {
+    color: #333;
+  }
+  
+  .password-toggle.visible i {
+    color: #333;
+  }
+  
+  .inputsub input[type="password"] {
+    padding-right: 30px;
+  }
+  
+  .fa {
+    font-family: "Font Awesome";
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .boutonsubrs .button a {
+    text-decoration: none;
+  }
+  
+  .boutonsubrs {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    width: 458px;
+    height: 56px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 38px;
+    gap: 8px;
+  }
+  
+  .cgubar {
+    display: flex;
+    justify-content: space-between;
+    width: 456px;
+    height: 37px;
+    align-items: flex-end;
+    gap: 154px;
+    flex-shrink: 0;
+  
+  }
+  
+  .socialLink {
+    text-align: left;
+    color: #202020 !important;
+    font-family: Avenir;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+  }
+  
+  .logoInscription {
+    text-align: center;
+  }
+  
+  
+  .btninscrire {
+    display: flex;
+    width: 460px;
+    height: 50px;
+    padding: 0px 75px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: var(--b-60006-red, #B60006);
+    text-decoration: none;
+  }
+  
+  
+  
+  .btninscrire span {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .cguvalider {
+    margin-top: 100px;
+  }
+  
+  .checkbox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+  
+  .btn-valide{
+    margin-top: 32px;
+  }
+  
+  
+  .cardsub .row form {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  .card {
+    display: flex;
+    background-image: url('../img/brass.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  
+    flex-direction: column;
+    justify-content: space-between;
+    width: 718px;
+    height: 226px;
+    object-fit: cover;
+    margin-top : 50px;
+    overflow: hidden; 
+  }
+  .header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    
+    
+    color: white;
+  }
+  
+  
+  
+  .cardsub form {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btnenregistrer {
+    display: flex;
+    height: 42px;
+    padding: 10px 75px 10px 75px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: var(--b-60006-red, #B60006);
+    text-decoration: none;
+    width: 323px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-family: "Avenir-Black-03.ttf";
+    font-size: 16px;
+    display: block; /* add this line to make the label take up the full width of the button */
+    width: 100%; /* add this line to make the label span the full width of the button */
+    text-align: center;
+  }
+  
+  
+  
+  .btn-enr {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  .btn-enr .retourpage a {
+  
+    background-image: url(../img/direction=left\,\ color=black.svg);
+    background-repeat: no-repeat;
+    padding: 0 30px 10px 20px;
+    background-position: left 0 center 0;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 24px;
+  }
+  
+  
+  #musique h2 {
+
+    display: inline-block;
+  
+  }
+  
+
+  
+  .entete {
+    width: 718px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 87px;
+    
+  }
+  
+  .entete .form-tags {
+    display: flex;
+    justify-content: space-between;
+  
+  
+  }
+  
+  /* .etape3 {
+  font-family: "Avenir-Black-03.ttf";
+  color: #FCFCFC;
+  }
+   */
+
+
+  #mestags .row {
+    margin-top: 35px;
+  }
+  
+  #mestags .entete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
+  #mestags .entete h1 {
+    font-family: "Oswald";
+    font-weight: bold;
+    font-size: 2.375rem;
+    color: #2E2A2A;
+    margin-bottom: 17px;
+  }
+  
+  #mestags .entete .form-tags {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #mestags .entete #categories {
+    width: 260px;
+    height: 50px;
+  }
+  
+  #mestags .entete input {
+    height: 50px;
+    width: 260px;
+    background-color: #F4F4F4;
+    font-family: "Avenir-Book-01.ttf";
+    font-size: 0.813rem;
+    color: #969696;
+    border: none;
+    border-radius: 5px;
+    padding-left: 49px;
+    background-image: url(../img/search-icon-darkgrey.svg);
+    background-repeat: no-repeat;
+    background-position: left 13px center;
+  }
+  
+  #mestags .entete input:focus {
+    background-color: #FCFCFC;
+    color: #2E2A2A;
+    outline: none;
+  }
+  
+  #mestags article {
+    margin-bottom: 36px;
+    min-height: 226px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  #mestags #Arts {
+    background-image: url(../img/image-categorie-art.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 14px;
+  }
+  
+  #mestags #Business {
+    background-image: url(../img/image-categorie-business.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 14px;
+  }
+  
+  #mestags #Brunch-apéro {
+    background-image: url(../img/image-categorie-brunch-apero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 14px;
+  }
+  
+  #mestags #Communauté {
+    background-image: url(../img/image-categorie-communaute.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 14px;
+  }
+  
+  #mestags #Film-médias {
+    background-image: url(../img/image-categorie-film-medias.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 14px;
+  }
+  
+  #mestags #Musique {
+    /* background-image: url(../img/brass.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     padding: 14px; */
+    /* display: flex; */
+    background-image: url('../img/brass.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: space-between;
+    object-fit: cover;
+    margin-top: 50px;
+    overflow: hidden;
+  }
+  
+  #mestags #Mode {
+    background-image: url(../img/image-categorie-mode.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 14px;
+  }
+  
+  #mestags #Sports-Fitness {
+    background-image: url(../img/image-categorie-sport.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 14px;
+  }
+  
+  #mestags #Santé {
+    background-image: url(../img/image-categorie-sante.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 14px;
+  }
+  
+  #mestags h2 {
+    font-family: "Oswald";
+    font-size: 1.75rem;
+    color: #FCFCFC;
+  }
+  
+  #mestags .label-categorie {
+    display: inline-block;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    background-color: rgba(46, 42, 42, 0.80);
+    backdrop-filter: blur(2px);
+    margin-bottom: 13px;
+  }
+  
+  #mestags .tag-management {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  #mestags button.tag-choice {
+    background-color: #969696;
+    font-family: "Avenir-Medium-09.ttf";
+    font-size: 0.75rem;
+    border-radius: 5px;
+    padding: 8px;
+    color: #FCFCFC;
+    border: none;
+    margin-right: 13px;
+    margin-bottom: 13px;
+  }
+  
+  #mestags button.tag-choice:hover {
+    background-color: #830425;
+  }
+  
+  #mestags button.enregistrer-changements {
+    background-color: #B60006;
+    font-family: "Avenir-Black-03.ttf";
+    font-size: 1rem;
+    color: #FCFCFC;
+    border: none;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 75px;
+    padding-right: 75px;
+    margin-top: 21px;
+  }
+  
+  #mestags button.enregistrer-changements:hover {
+    background-color: #830425;
+  }
+  
+  
+  
+  .btnenregistrer {
+    display: flex;
+    height: 42px;
+    padding: 10px 75px 10px 75px;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: var(--b-60006-red, #B60006);
+    text-decoration: none;
+    width: 323px;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px;  */
+    text-decoration: none;
+    color: white;
+    font-family: "Avenir-Black-03.ttf";
+    font-size: 16px;
+    display: block;
+    /* add this line to make the label take up the full width of the button */
+    width: 100%;
+    /* add this line to make the label span the full width of the button */
+    text-align: center;
+  }
+  
+  
+  
+  .btn-enr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-enr .retourpage {
+  
+    background-image: url(../img/direction=left\,\ color=black.svg);
+    background-repeat: no-repeat;
+    padding: 10px 20px 10px 30px;
+    background-position: left center;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .btn-enr .retourpage:hover {
+    background-image: url(../img/direction=left\,\ color=red.svg);
+    color:#B60006;
+  }
+  
+  .btnenregistrer {
+    display: flex;
+    width: 460px;
+    height: 50px;
+    padding: 0px 75px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: var(--b-60006-red, #B60006);
+    text-decoration: none;
+  }
+  
+  
+  
+  .btnenregistrer span {
+    text-decoration: none;
+    color: white;
+  }
+  
+.retourpage {
+    color: #2E2A2A;
+}
+
+
+/*MEDIAQUERIES MES TAGS*/
+
+@media screen and (min-width: 768px){
+    .background {
+     
+        height: 100vh;
+        
+        
+      }
+}
+
+@media screen and (min-width: 992px) {
+#mestags .entete .form-tags {
+  flex-basis: 70%;
+} 
+} 
+
+
+/* RESPONSIVE grands écrans à partir de 1200px*/
+
+/*MEDIAQUERIES MES TAGS*/
+
+@media screen and (min-width: 1200px) {
+    #mestags .entete .form-tags {
+      flex-basis: 77%;
+    } 
+  
+  }
+  
+  /* RESPONSIVE grands écrans à partir de 1400px*/
+  
+  /*MEDIAQUERIES MES TAGS*/
+  
+  @media screen and (min-width: 1400px) {
+    #mestags .entete .form-tags {
+      flex-basis: 70%;
+    } 
+  }

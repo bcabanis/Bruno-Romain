@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegistrationController !
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="/assets/css/17-07-23-style.css">
+	<link rel="stylesheet" href="/assets/css/mathieu.css">
+{% endblock %}
+
+
+
+{% block body %}
+
+	{% block header %}{% endblock %}
+
+	<main>
+		<section id="inscription">
+			<div class="containerfluid">
+				<div class="row">
+					<div class="col-12 col-md-5 background">
+						<a href="#" class="logo"><img src="/assets/img/logo-gettogether-white.svg" alt=""></a>
+					</div>
+
+
+					<div class="col-12 col-md-7 inscription adjust">
+						<article class="cardsub">
+							<h1>Connexion</h1>
+							<div class="subform">
+								<div class="inputsub">
+									{{ form_start(loginForm) }}
+									{{ form_errors(loginForm) }}
+									{{ form_row(loginForm.email) }}
+									{{ form_row(loginForm.password) }}
+
+									<div class="col-8 row">
+
+										<div class="col-2">
+											{{ form_widget(loginForm.stayConnected) }}
+										</div>
+										<div class="col-10">
+											{{ form_label(loginForm.stayConnected)  }}
+										</div>
+									</div>
+
+									{{ form_end(loginForm) }}
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+
+
+		</section>
+
+	{% block footer %}{% endblock %}
+	</main>
+
+
+
+{% endblock %}

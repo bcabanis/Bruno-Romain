@@ -1,0 +1,24 @@
+.example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+.example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+.sub-category-btn { display: none; }
+.category-btn { background-color: rgb(179, 7, 7); border: 1px solid black; padding: 0.5rem; color: #F5F5F5; margin : 0.1rem;  border-radius: 5px; font-size: 0.5rem; }
+.category-btn-onclick { background-color: lightgray; border: 1px solid black; padding: 0.1rem; }
+.category-btn:active { background-color: red; }
+.sub-category-btn[data-category-name="{{ subCategory }}"] {
+    display: none;
+} 
+.sub-category-btn[data-category-name="{{ subCategory }}"] {
+    display: inline-block;
+}
+
+.supertags {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+.flexOnMyBody {
+    display: flex;
+    flex-direction: row;
+}

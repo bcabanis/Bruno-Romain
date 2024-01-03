@@ -1,0 +1,23 @@
+
+
+
+<div>
+	<button class="reply-button" data-message-id="{{ message.id }}">Répondre</button>
+	<div class="reply-form" id="reply-form-{{ message.id }}" style="display: none;">
+		<form action="{{ path('app_event_post_chat_message', {'eventId': event.eventId}) }}" method="post">
+			<div>
+				<label for="content">Réponse :</label>
+				<input type="text" id="content" name="content" required>
+				<input type="hidden" name="parentMessageId" value="{{ message.id }}">
+			</div>
+			<button type="submit">Envoyer</button>
+		</form>
+	</div>
+	{% if message.replies is not empty %}
+		<div class="reply-container">
+			{% for reply in message.replies %}
+				{% include '_message.html.twig' with {'message': reply, 'event': event} %}
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>

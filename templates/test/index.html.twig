@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+<!-- templates/api_data/sorted_data.html.twig -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Données triées</title>
+</head>
+<body>
+    <h1>Données triées par nom d'événement :</h1>
+    <ul>
+        {% for record in sorted_data %}
+            <li>
+                <strong>Nom de l'événement:</strong> {{ record.fields.nom_evenement }}<br>
+                <strong>Lieu:</strong> {{ record.fields.lieu }}<br>
+                <strong>Date:</strong> {{ record.fields.date }}<br>
+                <strong>Localisation:</strong> {{ record.fields.localisation }}<br>
+                <strong>Description:</strong> {{ record.fields.description }}
+                <hr>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

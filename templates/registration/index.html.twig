@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegistrationController !
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="./assets/css/17-07-23-style.css">
+	<link rel="stylesheet" href="./assets/css/mathieu.css">
+
+{% endblock %}
+{% block body %}
+	{% block header %}{% endblock %}
+
+	<main>
+		<section id="inscription">
+			<div class="containerfluid">
+				<div class="row">
+					<div class="col-12 col-md-5 background">
+						<a href="#" class="logo"><img src="./assets/img/logo-timeout-white.svg" alt=""></a>
+					</div>
+
+
+					<div class="col-12 col-md-7 inscription">
+						<article class="cardsub">
+							<h1>Inscription</h1>
+							<div class="subform">
+								<div class="inputsub">
+									{{ form_start(registrationForm, {'attr': {'id': 'registrationForm'}}) }}
+									{{ form_errors(registrationForm) }}
+									{{ form_row(registrationForm.destination) }}
+									{{ form_row(registrationForm.email) }}
+									{{ form_row(registrationForm.password) }}
+									<div class="rssub">
+										<div class="boutonsubrs">
+											<div class="col-4 logoInscription">
+												<img src="assets/img/google.svg" alt="Logo">
+											</div>
+											<div class="button col-8 socialLink">
+												<a href="#">S'inscrire avec Google</a>
+											</div>
+										</div>
+										<div class="boutonsubrs">
+											<div class="col-4 logoInscription">
+												<img src="assets/img/apple.svg" alt="Logo">
+											</div>
+											<div class="button col-8 socialLink">
+												<a href="#">S'inscrire avec Apple</a>
+											</div>
+										</div>
+										<div class="boutonsubrs">
+											<div class="col-4 logoInscription">
+												<img src="assets/img/color=blue.svg" alt="Logo">
+											</div>
+											<div class="button col-8 socialLink">
+												<a href="#">S'inscrire avec Facebook</a>
+											</div>
+										</div>
+									</div>
+									<div class="row cguDiv">
+										<div class="col-8 row">
+
+											<div class="col-2">
+												{{ form_widget(registrationForm.CGU) }}
+											</div>
+											<div class="col-10">
+												{{ form_label(registrationForm.CGU)  }}
+											</div>
+										</div>
+										<div class="col-4 rightPlacement">
+											<a href="">Lire la CGU</a>
+										</div>
+									</div>
+									{{ form_row(registrationForm.submit) }}
+									{{ form_end(registrationForm) }}
+
+								</div>
+
+							</div>
+
+
+							<!-- </div> -->
+
+
+						</article>
+					</div>
+				</div>
+			</div>
+
+
+		</section>
+
+
+	</main>
+	{% block footer %}{% endblock %}
+{% endblock %}

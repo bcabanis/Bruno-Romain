@@ -1,0 +1,364 @@
+body {
+  overflow-x: hidden;
+}
+
+.background {
+  /* width: 793px; */
+  /* height: 1080px;  */
+  /* background-color: black; */
+  background: url("../img/parisnight.png") no-repeat center;
+  background-size: cover;
+  padding: 16px 32px;
+  /* height: 1146px; */
+  /* background-size: contain; */
+  
+}
+.inscription{
+  padding: 80px 0;
+}
+
+.fileForm{
+  padding: 50px 0;
+}
+
+.imgStep {
+  width: 100%;
+}
+
+.divSepa {
+  margin-bottom: 100px;
+}
+
+.divSepa p {
+  color: white;
+  margin: 0;
+  font-size: 20px;
+}
+
+.divBack {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+.h1perso {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.419);
+  border-radius: 20px;
+  /* padding: ; */
+}
+
+.cardsub {
+  width: 460px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.cardsub h1 {
+  font-family: Oswald;
+  font-size: 2.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+}
+
+.subform {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.button .socialLink {
+  color: var(--2-e-2-a-2-a-black, #2E2A2A);
+  font-family: "Avenir";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+
+.inputsub {
+  
+  font-family: "Avenir";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+  text-decoration: none;
+  margin-top: 32px;
+  position: relative;
+  
+  
+
+}
+
+.inputsub input {
+  width: 100% !important;
+  height: 56px;
+  margin-bottom: 32px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.051);
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+fieldset .inputsub label {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 44px;
+  right: 17px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.password-toggle i {
+  font-size: 16px;
+  color: #999;
+}
+
+.password-toggle:hover i {
+  color: #333;
+}
+
+.password-toggle.visible i {
+  color: #333;
+}
+
+.inputsub input[type="password"] {
+  padding-right: 30px;
+}
+
+.fa {
+  font-family: "Font Awesome";
+  font-size: 16px;
+  color: #333;
+}
+
+.boutonsubrs .button a {
+  text-decoration: none;
+}
+
+.boutonsubrs {
+  display: flex;
+  flex-direction: row;
+  
+  width: 458px;
+  height: 56px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  margin-top: 38px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.051);
+
+  gap: 8px;
+}
+
+.cgubar {
+  display: flex;
+  justify-content: space-between;
+  width: 456px;
+  height: 37px;
+  align-items: flex-end;
+  gap: 154px;
+  flex-shrink: 0;
+
+}
+
+.socialLink {
+  text-align: left;
+  
+
+  font-family: Avenir;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.socialLink a {
+  color: #202020 !important;
+}
+
+.logoInscription {
+  text-align: center;
+}
+
+.enteteHeight {
+  display: block;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.btninscrire {
+  display: flex;
+  width: 460px;
+  height: 50px;
+  padding: 0px 75px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 5px;
+  background: var(--b-60006-red, #B60006);
+  text-decoration: none;
+}
+
+.btninscrire span {
+  text-decoration: none;
+  color: white;
+}
+
+.cguvalider {
+  margin-top: 100px;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.btn-valide{
+  margin-top: 32px;
+}
+
+
+.cardsub .row form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-margin {
+  margin: 0px 0px 32px 0px;
+}
+
+.adjust {
+  padding-bottom: 350px;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.avatarPicture {
+  width: 20%;
+  margin-bottom: 30px;
+}
+.avatarImg {
+  width: 140px;
+}
+
+.avatarImg:hover {
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.256);
+} 
+
+.divAvatar {
+  flex-wrap: wrap;
+  padding: 50px 100px 50px 100px;
+}
+
+
+
+.pEtape {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.cguForm {
+  text-align: left;
+}
+
+.rightPlacement {
+  text-align: right;
+}
+
+.cguDiv {
+  margin-top: 50px;
+}
+
+.rightPlacement a {
+  color: rgba(0, 0, 0, 0.37);
+}
+
+.imgPicture {
+  width: 140px;
+  height: 140px;
+  background-color: rgba(0, 0, 0, 0.051);
+}
+
+
+/* Personnalisation du bouton "Parcourir" */
+input[type="file"] {
+  visibility: hidden;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: solid 2px black;
+}
+
+.btn-file {
+  width: 140px;
+  
+}
+
+#photo_form div {
+  text-align: center;
+}
+
+.divConfirmFile {
+  padding: 50px 100px 50px 100px;
+  justify-content: space-between;
+}
+
+.divConfirmFile a img {
+  width: 25px;
+  padding: 0;
+}
+
+.divConfirmFile a p {
+  color: black;
+  padding: 12px 0px 0px 0px;
+  margin: 0;
+}
+
+.divConfirmFile a {
+  vertical-align: middle;
+}
+
+label {
+  padding-bottom: 10px;
+}
+
+.fa-upload {
+  font-size: 35px;
+  margin-top: 50px;
+  color: rgba(0, 0, 0, 0.444);
+}

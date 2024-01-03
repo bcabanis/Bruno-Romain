@@ -1,0 +1,780 @@
+{
+  "Catégorie Arts": {
+    "Expositions et Galeries": [
+      {
+        "Titre": "Exposition d'Art Contemporain",
+        "Description": "Découvrez des œuvres d'art contemporain fascinantes lors de cette exposition. Des artistes talentueux vous présenteront leur vision artistique unique.",
+        "Date_de_l_evenement": "10 septembre 2023 de 10h00 à 18h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Galerie d'Art Moderne, 20 Rue de l'Art, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Galerie d'Art Vision",
+        "URL_d_image": "Exposition d'Art Contemporain.png",
+        "eventId": "ART001"
+      },
+      {
+        "Titre": "Exposition de Sculptures Classiques",
+        "Description": "Admirez des sculptures classiques emblématiques lors de cette exposition. Ces œuvres d'art intemporelles témoignent du génie des sculpteurs de différentes époques.",
+        "Date_de_l_evenement": "28 aout 2023 de 12h00 à 16h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Musée de la Sculpture, 10 Rue des Sculpteurs, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Musée de l'Art Classique",
+        "URL_d_image": "Exposition de Sculptures Classiques.jpg",
+        "eventId": "ART002"
+      },
+      {
+        "Titre": "Exposition de Peintures Impressionnistes",
+        "Description": "Plongez dans l'univers de l'impressionnisme lors de cette exposition de peintures captivantes. Les œuvres des grands maîtres vous transporteront dans des paysages colorés et lumineux.",
+        "Date_de_l_evenement": "7 septembre 2023 de 14h00 à 19h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Galerie des Impressionnistes, 5 Rue de l'Impressionnisme, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Galerie des Peintres",
+        "URL_d_image": "Exposition de Peintures Impressionnistes.jpg",
+        "eventId": "ART003"
+      }
+    ],
+    "Spectacles et Théâtres": [
+      {
+        "Titre": "Comédie Musicale enchanteresse",
+        "Description": "Plongez dans un conte féerique avec cette comédie musicale enchanteresse. Des décors somptueux et des chorégraphies envoûtantes vous émerveilleront.",
+        "Date_de_l_evenement": "10 septembre 2023 à 15h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Théâtre Magique, 20 Rue de la Comédie, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Compagnie des Rêves",
+        "URL_d_image": "Comédie Musicale enchanteresse.jpeg",
+        "eventId": "ART004"
+      },
+      {
+        "Titre": "Pièce de Théâtre Classique",
+        "Description": "Assistez à une pièce de théâtre classique intemporelle. Les acteurs talentueux vous feront revivre des histoires émouvantes et drôles du répertoire théâtral.",
+        "Date_de_l_evenement": "28 aout 2023 à 20h30",
+        "date_format": "2023-08-28",
+        "Adresse": "Théâtre Élégant, 10 Rue du Théâtre, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Compagnie du Théâtre Classique",
+        "URL_d_image": "Pièce de Théâtre Classique.webp",
+        "eventId": "ART005"
+      },
+      {
+        "Titre": "Spectacle de Ballet Magique",
+        "Description": "Émerveillez-vous devant ce spectacle de ballet magique. Les danseurs gracieux vous transporteront dans un univers féérique grâce à leur talent et leur élégance.",
+        "Date_de_l_evenement": "7 septembre 2023 à 19h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Opéra des Ballets, 5 Rue de la Danse, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Ballets Élégance",
+        "URL_d_image": "Spectacle de Ballet Magique.jpeg",
+        "eventId": "ART006"
+      }
+    ],
+"Concerts et Musique": [
+      {
+        "Titre": "Concert de Jazz en Plein Air",
+        "Description": "Venez profiter d'une soirée musicale en plein air avec ce concert de jazz envoûtant. Des musiciens talentueux vous offriront des performances improvisées et émouvantes.",
+        "Date_de_l_evenement": "10 septembre 2023 à 19h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Parc du Jazz, 20 Rue du Swing, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Jazz en Liberté",
+        "URL_d_image": "Concert de Jazz en Plein Air.webp",
+        "eventId": "ART007"
+      },
+      {
+        "Titre": "Concert de Musique Classique",
+        "Description": "Appréciez les mélodies enchanteresses lors de ce concert de musique classique. L'orchestre symphonique interprétera des œuvres intemporelles de grands compositeurs.",
+        "Date_de_l_evenement": "28 aout 2023 à 20h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Salle de Concert, 10 Rue de la Musique, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Orchestre Symphonique Harmonie",
+        "URL_d_image": "Concert de Musique Classique.jpeg",
+        "eventId": "ART008"
+      },
+      {
+        "Titre": "Concert de Rock Énergique",
+        "Description": "Vivez une soirée explosive avec ce concert de rock énergique. Les artistes vous feront vibrer au rythme des guitares électriques et des solos endiablés.",
+        "Date_de_l_evenement": "7 septembre 2023 à 21h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Salle de Rock, 5 Rue du Rock'n'Roll, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Association Rock en Folie",
+        "URL_d_image": "Concert de Rock Énergique.jpeg",
+        "eventId": "ART009"
+      }
+    ],
+    "Ateliers et Créations": [
+      {
+        "Titre": "Atelier de Peinture Abstraite",
+        "Description": "Explorez votre créativité lors de cet atelier de peinture abstraite. Vous pourrez expérimenter différentes techniques artistiques pour créer des œuvres originales.",
+        "Date_de_l_evenement": "10 septembre 2023 de 14h00 à 17h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Atelier d'Art Abstrait, 20 Rue de la Créativité, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Artiste Peintre Libre",
+        "URL_d_image": "Atelier de Peinture Abstraite.jpeg",
+        "eventId": "ART010"
+      },
+      {
+        "Titre": "Atelier de Sculpture sur Bois",
+        "Description": "Initiez-vous à l'art de la sculpture sur bois lors de cet atelier créatif. Vous apprendrez les techniques de base pour donner vie à vos propres créations.",
+        "Date_de_l_evenement": "28 aout 2023 de 15h00 à 18h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Atelier de Sculpture, 10 Rue de l'Artisanat, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Artisan Créateur",
+        "URL_d_image": "Atelier de Sculpture sur Bois.webp",
+        "eventId": "ART011"
+      },
+      {
+        "Titre": "Atelier de Danse Contemporaine",
+        "Description": "Exprimez-vous à travers la danse contemporaine lors de cet atelier artistique. Vous explorerez le mouvement et la gestuelle pour créer des chorégraphies uniques.",
+        "Date_de_l_evenement": "7 septembre 2023 de 17h00 à 19h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Espace de Danse, 5 Rue de la Contemporaine, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Compagnie de Danse Libre",
+        "URL_d_image": "Atelier de Danse Contemporaine.jpeg",
+        "eventId": "ART012"
+      }
+    ]
+},
+"Catégorie Musique": {
+    "Festivals et Concerts": [
+      {
+        "Titre": "Festival de Musique Folk",
+        "Description": "Venez célébrer la musique folk lors de ce festival animé. Des artistes locaux et internationaux vous offriront des performances chaleureuses et authentiques.",
+        "Date_de_l_evenement": "10 septembre 2023 de 12h00 à 22h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Parc de la Folk, 20 Rue de la Tradition, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Association Folklorique",
+        "URL_d_image": "Festival de Musique Folk.avif",
+        "eventId": "MUS001"
+      },
+      {
+        "Titre": "Concert de Hip-Hop Électrisant",
+        "Description": "Vibrez au son du hip-hop lors de ce concert énergique. Des rappeurs talentueux et des beats entraînants vous feront danser toute la nuit.",
+        "Date_de_l_evenement": "28 aout 2023 à 22h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Salle de Concert Hip-Hop, 10 Rue du Flow, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Collectif Hip-Hop Groove",
+        "URL_d_image": "Concert de Hip-Hop Électrisant.webp",
+        "eventId": "MUS002"
+      },
+      {
+        "Titre": "Concert de Musique Classique",
+        "Description": "Appréciez les mélodies enchanteresses lors de ce concert de musique classique. L'orchestre symphonique interprétera des œuvres intemporelles de grands compositeurs.",
+        "Date_de_l_evenement": "7 septembre 2023 à 20h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Salle de Concert, 5 Rue du Classique, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Orchestre Symphonique Harmonie",
+        "URL_d_image": "Insérer_URL_d_image_unique_ici",
+        "eventId": "MUS003"
+      }
+    ],
+    "Cours de Musique": [
+      {
+        "Titre": "Cours de Guitare Acoustique",
+        "Description": "Initiez-vous à la guitare acoustique lors de ces cours musicaux. Un professeur passionné vous enseignera les bases de l'instrument.",
+        "Date_de_l_evenement": "10 septembre 2023 de 16h00 à 18h00",
+        "date_format": "2023-09-10",
+        "Adresse": "École de Musique, 20 Rue de la Musique, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "École de Musique Harmonie",
+        "URL_d_image": "Cours de Guitare Acoustique.jpeg",
+        "eventId": "MUS004"
+      },
+      {
+        "Titre": "Cours de Chant Lyrique",
+        "Description": "Découvrez l'art du chant lyrique lors de ces cours vocaux. Un chanteur professionnel vous aidera à développer votre voix et votre technique.",
+        "Date_de_l_evenement": "28 aout 2023 de 18h00 à 20h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Académie de Chant, 10 Rue du Lyrique, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Académie des Voix",
+        "URL_d_image": "Cours de Chant Lyrique.jpg",
+        "eventId": "MUS005"
+      },
+      {
+        "Titre": "Cours de Batterie Groovy",
+        "Description": "Devenez un as de la batterie groovy grâce à ces cours de rythme. Un batteur passionné vous enseignera les techniques pour jouer des beats entraînants.",
+        "Date_de_l_evenement": "7 septembre 2023 de 19h00 à 21h00",
+        "date_format": "2023-09-07",
+        "Adresse": "École de Musique, 5 Rue du Groove, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "École de Musique Rythme",
+        "URL_d_image": "Cours de Batterie Groovy.png",
+        "eventId": "MUS006"
+      }
+    ]
+  },
+"Catégorie Business": {
+    "Conférences et Séminaires": [
+      {
+        "Titre": "Conférence sur l'Entrepreneuriat",
+        "Description": "Participez à cette conférence inspirante sur l'entrepreneuriat. Des entrepreneurs à succès partageront leur parcours et leurs conseils pour réussir dans le monde des affaires.",
+        "Date_de_l_evenement": "10 septembre 2023 de 14h00 à 18h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Centre des Affaires, 20 Rue de l'Entreprise, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Club des Entrepreneurs",
+        "URL_d_image": "Conférence sur l'Entrepreneuriat.png",
+        "eventId": "BUS001"
+      },
+      {
+        "Titre": "Séminaire sur le Marketing Digital",
+        "Description": "Découvrez les dernières tendances du marketing digital lors de ce séminaire informatif. Des experts du domaine vous présenteront les stratégies gagnantes.",
+        "Date_de_l_evenement": "28 aout 2023 de 9h00 à 17h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Salle de Conférence, 10 Rue du Marketing, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Agence de Marketing Connecté",
+        "URL_d_image": "Séminaire sur le Marketing Digital.webp",
+        "eventId": "BUS002"
+      },
+      {
+        "Titre": "Conférence sur l'Investissement",
+        "Description": "Apprenez à optimiser vos investissements lors de cette conférence financière. Des experts vous donneront des conseils avisés pour faire fructifier votre patrimoine.",
+        "Date_de_l_evenement": "7 septembre 2023 de 18h00 à 20h30",
+        "date_format": "2023-09-07",
+        "Adresse": "Centre des Finances, 5 Rue de l'Investissement, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Cabinet de Conseil Financier",
+        "URL_d_image": "Conférence sur l'Investissement.jpeg",
+        "eventId": "BUS003"
+      }
+    ],
+    "Salons et Foires": [
+      {
+        "Titre": "Salon de l'Immobilier",
+        "Description": "Découvrez les opportunités immobilières lors de ce salon spécialisé. Des agences et promoteurs vous présenteront des biens variés à la vente et à la location.",
+        "Date_de_l_evenement": "10 septembre 2023 de 10h00 à 19h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Parc des Expositions, 20 Rue de l'Immobilier, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Agence Immobilière Proximité",
+        "URL_d_image": "Salon de l'Immobilier.jpeg",
+        "eventId": "BUS004"
+      },
+      {
+        "Titre": "Foire des Startups",
+        "Description": "Explorez l'univers des startups lors de cette foire dédiée à l'innovation. Des jeunes entreprises prometteuses vous présenteront leurs projets et leurs produits.",
+        "Date_de_l_evenement": "28 aout 2023 de 11h00 à 17h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Espace Startup, 10 Rue de l'Innovation, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Association des Startups Créatives",
+        "URL_d_image": "Foire des Startups.jpeg",
+        "eventId": "BUS005"
+      },
+      {
+        "Titre": "Salon de l'Artisanat",
+        "Description": "Découvrez le talent des artisans locaux lors de ce salon dédié à l'artisanat. Des créateurs passionnés vous présenteront des objets uniques et faits main.",
+        "Date_de_l_evenement": "7 septembre 2023 de 15h00 à 20h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Halle de l'Artisanat, 5 Rue de l'Artisan, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Chambre des Métiers et de l'Artisanat",
+        "URL_d_image": "Salon de l'Artisanat.jpeg",
+        "eventId": "BUS006"
+      }
+    ]
+  },
+"Catégorie Communauté": {
+    "Actions Locales et Bénévolat": [
+      {
+        "Titre": "Journée de Nettoyage Citoyen",
+        "Description": "Participez à cette journée de nettoyage citoyen pour préserver notre environnement. Ensemble, nous ramasserons les déchets et embellirons notre quartier.",
+        "Date_de_l_evenement": "10 septembre 2023 de 9h00 à 12h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Place du Bénévolat, 20 Rue de l'Engagement, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Association pour l'Environnement",
+        "URL_d_image": "Journée de Nettoyage Citoyen.jpeg",
+        "eventId": "COM001"
+      },
+      {
+        "Titre": "Collecte de Dons pour les Sans-Abri",
+        "Description": "Participez à cette collecte de dons pour venir en aide aux personnes sans-abri. Vêtements, couvertures et denrées alimentaires non périssables sont les bienvenus.",
+        "Date_de_l_evenement": "28 aout 2023 de 14h00 à 18h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Point de Collecte Solidaire, 10 Rue de la Solidarité, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Association Solidaire Ensemble",
+        "URL_d_image": "Collecte de Dons pour les Sans-Abri.jpg",
+        "eventId": "COM002"
+      },
+      {
+        "Titre": "Soutien Scolaire pour les Enfants",
+        "Description": "Apportez votre soutien aux enfants en difficulté scolaire lors de ces séances de tutorat. Ensemble, nous les aiderons à progresser dans leurs apprentissages.",
+        "Date_de_l_evenement": "7 septembre 2023 de 16h00 à 18h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Centre d'Accompagnement Scolaire, 5 Rue de l'Enseignement, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Association Éducation pour Tous",
+        "URL_d_image": "Soutien Scolaire pour les Enfants.jpeg",
+        "eventId": "COM003"
+      }
+    ],
+    "Parrainages et Mentorat": [
+      {
+        "Titre": "Programme de Parrainage des Jeunes Talents",
+        "Description": "Devenez parrain ou marraine de jeunes talents en devenir. Vous les accompagnerez dans leur parcours professionnel et les aiderez à développer leur potentiel.",
+        "Date_de_l_evenement": "10 septembre 2023 à 18h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Espace Parrainage, 20 Rue du Parrain, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Association Parrains & Marraines",
+        "URL_d_image": "Programme de Parrainage des Jeunes Talents.jpeg",
+        "eventId": "COM004"
+      },
+      {
+        "Titre": "Programme de Mentorat pour Entrepreneurs",
+        "Description": "Rejoignez ce programme de mentorat pour aider les entrepreneurs à réussir dans leur projet. Votre expérience sera précieuse pour les guider vers la réussite.",
+        "Date_de_l_evenement": "28 aout 2023 à 19h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Espace Mentorat, 10 Rue du Mentor, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Réseau d'Entrepreneurs Prospères",
+        "URL_d_image": "Programme de Mentorat pour Entrepreneurs.jpeg",
+        "eventId": "COM005"
+      },
+      {
+        "Titre": "Programme de Parrainage pour Étudiants Étrangers",
+        "Description": "Accueillez des étudiants étrangers en tant que parrain ou marraine. Vous les aiderez à s'intégrer dans leur nouvel environnement et à découvrir la culture locale.",
+        "Date_de_l_evenement": "7 septembre 2023 à 15h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Espace d'Accueil International, 5 Rue de l'Interculturel, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Association d'Échanges Culturels",
+        "URL_d_image": "Programme de Parrainage pour Étudiants Étrangers.png",
+        "eventId": "COM006"
+      }
+    ]
+  },
+"Catégorie Sports & Fitness": {
+    "Compétitions et Tournois": [
+      {
+        "Titre": "Tournoi de Football Amateur",
+        "Description": "Participez à ce tournoi de football amateur et montrez vos talents sur le terrain. Des équipes passionnées s'affronteront dans une ambiance conviviale.",
+        "Date_de_l_evenement": "10 septembre 2023 de 13h00 à 18h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Stade de Football, 20 Rue du Sport, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Club de Football Amateur",
+        "URL_d_image": "Tournoi de Football Amateur.jpeg",
+        "eventId": "SPT001"
+      },
+      {
+        "Titre": "Tournoi de Tennis Open",
+        "Description": "Participez à ce tournoi de tennis ouvert à tous les niveaux. Vous aurez l'occasion de défier d'autres joueurs passionnés de ce sport.",
+        "Date_de_l_evenement": "28 aout 2023 de 10h00 à 17h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Club de Tennis, 10 Rue du Smash, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Association Tennis Passion",
+        "URL_d_image": "Tournoi de Tennis Open.jpeg",
+        "eventId": "SPT002"
+      },
+      {
+        "Titre": "Compétition de Natation",
+        "Description": "Participez à cette compétition de natation et relevez des défis aquatiques. Des épreuves variées vous attendent dans une piscine olympique.",
+        "Date_de_l_evenement": "7 septembre 2023 de 14h00 à 19h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Piscine Olympique, 5 Rue de la Natation, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Fédération de Natation",
+        "URL_d_image": "Compétition de Natation.jpeg",
+        "eventId": "SPT003"
+      }
+    ],
+    "Entraînements et Cours": [
+      {
+        "Titre": "Entraînement de Course à Pied",
+        "Description": "Rejoignez cet entraînement de course à pied pour améliorer votre endurance. Un coach professionnel vous guidera dans votre pratique sportive.",
+        "Date_de_l_evenement": "10 septembre 2023 de 9h00 à 10h30",
+        "date_format": "2023-09-10",
+        "Adresse": "Parc des Sports, 20 Rue de la Course, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Club de Course à Pied",
+        "URL_d_image": "Entraînement de Course à Pied.jpeg",
+        "eventId": "SPT004"
+      },
+      {
+        "Titre": "Cours de Yoga en Plein Air",
+        "Description": "Détendez-vous et ressourcez-vous lors de ce cours de yoga en plein air. Vous pratiquerez des postures pour retrouver équilibre et sérénité.",
+        "Date_de_l_evenement": "28 aout 2023 de 8h00 à 9h30",
+        "date_format": "2023-08-28",
+        "Adresse": "Jardin Zen, 10 Rue du Yoga, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Centre de Yoga Harmonie",
+        "URL_d_image": "Cours de Yoga en Plein Air.jpeg",
+        "eventId": "SPT005"
+      },
+      {
+        "Titre": "Entraînement de Boxe Intensive",
+        "Description": "Défoulez-vous lors de cet entraînement de boxe intense. Vous apprendrez les techniques de base et travaillerez votre condition physique.",
+        "Date_de_l_evenement": "7 septembre 2023 de 18h00 à 20h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Salle de Boxe, 5 Rue du Ring, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Club de Boxe Dynamite",
+        "URL_d_image": "Entraînement de Boxe Intensive.jpeg",
+        "eventId": "SPT006"
+      }
+    ]
+  },
+"Catégorie Nourriture & Boisson": {
+    "Restaurants et Cafés": [
+      {
+        "Titre": "Soirée Gastronomique",
+        "Description": "Dégustez un menu raffiné lors de cette soirée gastronomique. Un chef étoilé vous concoctera des plats d'exception accompagnés de vins fins.",
+        "Date_de_l_evenement": "10 septembre 2023 à 20h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Restaurant Étoilé, 20 Rue de la Gastronomie, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Restaurant Étoilé Gourmand",
+        "URL_d_image": "Soirée Gastronomique.webp",
+        "eventId": "FNB001"
+      },
+      {
+        "Titre": "Brunch Dominical Convivial",
+        "Description": "Rejoignez-nous pour un brunch dominical convivial. Un buffet varié vous attend avec des mets sucrés et salés pour satisfaire toutes vos envies.",
+        "Date_de_l_evenement": "28 aout 2023 de 11h00 à 15h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Café Cosy, 10 Rue du Brunch, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Café Convivialité",
+        "URL_d_image": "Brunch Dominical Convivial.webp",
+        "eventId": "FNB002"
+      },
+      {
+        "Titre": "Dîner Spectacle Magique",
+        "Description": "Vivez une soirée féérique avec ce dîner spectacle magique. Des illusionnistes talentueux vous enchanteront tout au long de la soirée.",
+        "Date_de_l_evenement": "7 septembre 2023 à 19h30",
+        "date_format": "2023-09-07",
+        "Adresse": "Salle de Spectacle Magique, 5 Rue de l'Illusion, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Compagnie des Illusionnistes",
+        "URL_d_image": "Dîner Spectacle Magique.jpeg",
+        "eventId": "FNB003"
+      }
+    ],
+    "Fast-Food et Street Food": [
+      {
+        "Titre": "Food Truck Festival",
+        "Description": "Venez goûter aux saveurs du monde lors de ce festival de food trucks. Des cuisines variées vous régaleront avec leurs plats exotiques.",
+        "Date_de_l_evenement": "10 septembre 2023 de 12h00 à 22h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Place des Food Trucks, 20 Rue de la Street Food, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Collectif des Food Trucks",
+        "URL_d_image": "Food Truck Festival.jpeg",
+        "eventId": "FNB004"
+      },
+      {
+        "Titre": "Burger Party Gourmande",
+        "Description": "Venez déguster des burgers gourmands lors de cette soirée spéciale. Des recettes originales vous seront proposées pour satisfaire vos papilles.",
+        "Date_de_l_evenement": "28 aout 2023 de 18h00 à 22h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Food Corner, 10 Rue du Burger, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Burger Artisanal",
+        "URL_d_image": "Burger Party Gourmande.jpg",
+        "eventId": "FNB005"
+      },
+      {
+        "Titre": "Festival de Cuisine Végétarienne",
+        "Description": "Découvrez la diversité de la cuisine végétarienne lors de ce festival. Des plats sains et savoureux raviront les végétariens et les curieux.",
+        "Date_de_l_evenement": "7 septembre 2023 de 15h00 à 19h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Parc Vert, 5 Rue du Végétal, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Association Végétarienne Gourmet",
+        "URL_d_image": "Festival de Cuisine Végétarienne.avif",
+        "eventId": "FNB006"
+      }
+    ],
+    "Boissons et Cocktails": [
+      {
+        "Titre": "Fête de la Bière Artisanale",
+        "Description": "Célébrez la bière artisanale lors de cette fête animée. Des brasseries locales vous présenteront leurs créations brassicoles.",
+        "Date_de_l_evenement": "10 septembre 2023 de 16h00 à 23h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Brasserie du Coin, 20 Rue de la Bière, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Association des Brasseurs Indépendants",
+        "URL_d_image": "Fête de la Bière Artisanale.jpeg",
+        "eventId": "FNB007"
+      },
+      {
+        "Titre": "Soirée Cocktail Exotique",
+        "Description": "Découvrez des saveurs exotiques lors de cette soirée cocktail. Des mixologues talentueux vous prépareront des cocktails surprenants.",
+        "Date_de_l_evenement": "28 aout 2023 à 19h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Bar Tropical, 10 Rue du Cocktail, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Bar Tiki Tropicana",
+        "URL_d_image": "Soirée Cocktail Exotique.jpeg",
+        "eventId": "FNB008"
+      },
+      {
+        "Titre": "Dégustation de Vins fins",
+        "Description": "Participez à cette dégustation de vins fins sélectionnés par des sommeliers experts. Vous découvrirez des appellations prestigieuses.",
+        "Date_de_l_evenement": "7 septembre 2023 à 18h30",
+        "date_format": "2023-09-07",
+        "Adresse": "Cave Prestige, 5 Rue du Vin, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Club Œnologie Élite",
+        "URL_d_image": "Dégustation de Vins fins.png",
+        "eventId": "FNB009"
+      }
+    ]
+  },
+"Catégorie Mode": {
+    "Défilés de Mode": [
+      {
+        "Titre": "Fashion Week Paris",
+        "Description": "Assistez aux défilés de créateurs de renom lors de la Fashion Week Paris. Découvrez les tendances de la saison prochaine.",
+        "Date_de_l_evenement": "10 septembre 2023 à 17h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Palais de la Mode, 20 Rue de la Mode, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Fédération de la Mode",
+        "URL_d_image": "Fashion Week Paris.jpeg",
+        "eventId": "MOD001"
+      },
+      {
+        "Titre": "Défilé de Créateurs Émergents",
+        "Description": "Soutenez les jeunes créateurs lors de ce défilé dédié aux talents émergents. Leur créativité vous surprendra.",
+        "Date_de_l_evenement": "28 aout 2023 à 15h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Espace Créatif, 10 Rue de la Création, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Association des Nouveaux Créateurs",
+        "URL_d_image": "Défilé de Créateurs Émergents.webp",
+        "eventId": "MOD002"
+      },
+      {
+        "Titre": "Défilé de Mode Éthique",
+        "Description": "Explorez la mode éthique lors de ce défilé engagé. Des marques respectueuses de l'environnement vous présenteront leurs collections durables.",
+        "Date_de_l_evenement": "7 septembre 2023 à 19h30",
+        "date_format": "2023-09-07",
+        "Adresse": "Espace Éthique, 5 Rue de l'Éthique, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Collectif pour une Mode Responsable",
+        "URL_d_image": "Défilé de Mode Éthique.jpeg",
+        "eventId": "MOD003"
+      }
+    ],
+    "Salons de la Mode": [
+      {
+        "Titre": "Salon du Prêt-à-Porter",
+        "Description": "Découvrez les collections de prêt-à-porter lors de ce salon professionnel. Des marques de renom vous présenteront leurs nouveautés.",
+        "Date_de_l_evenement": "10 septembre 2023 de 10h00 à 18h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Parc des Expositions, 20 Rue du Prêt-à-Porter, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Fédération du Prêt-à-Porter",
+        "URL_d_image": "Salon du Prêt-à-Porter.jpeg",
+        "eventId": "MOD004"
+      },
+      {
+        "Titre": "Salon de la Haute Couture",
+        "Description": "Plongez dans l'univers de la haute couture lors de ce salon prestigieux. Des créations d'exception vous émerveilleront.",
+        "Date_de_l_evenement": "28 aout 2023 de 11h00 à 19h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Hôtel des Couturiers, 10 Rue de la Couture, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Chambre Syndicale de la Haute Couture",
+        "URL_d_image": "Salon de la Haute Couture.webp",
+        "eventId": "MOD005"
+      },
+      {
+        "Titre": "Salon des Accessoires de Mode",
+        "Description": "Trouvez les accessoires parfaits lors de ce salon spécialisé. Des bijoux, sacs et chaussures tendances seront présentés.",
+        "Date_de_l_evenement": "7 septembre 2023 de 15h00 à 21h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Espace Accessoires, 5 Rue des Accessoires, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Fédération des Accessoiristes de Mode",
+        "URL_d_image": "Salon des Accessoires de Mode.png",
+        "eventId": "MOD006"
+      }
+    ]
+  },
+"Catégorie Spiritualité": {
+    "Cérémonies Religieuses": [
+      {
+        "Titre": "Messe du Dimanche",
+        "Description": "Assistez à la messe du dimanche pour un moment de recueillement et de prière en communauté.",
+        "Date_de_l_evenement": "10 septembre 2023 à 10h30",
+        "date_format": "2023-09-10",
+        "Adresse": "Église Sainte-Marie, 20 Rue de la Foi, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Paroisse Sainte-Marie",
+        "URL_d_image": "Messe du Dimanche.jpeg",
+        "eventId": "SPI001"
+      },
+      {
+        "Titre": "Célébration Shabbat",
+        "Description": "Participez à la célébration du Shabbat avec chants, prières et repas traditionnel.",
+        "Date_de_l_evenement": "28 aout 2023 à 19h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Synagogue Beth Israël, 10 Rue de la Torah, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Communauté Juive de Paris",
+        "URL_d_image": "Célébration Shabbat.jpeg",
+        "eventId": "SPI002"
+      },
+      {
+        "Titre": "Cérémonie Bouddhiste de Méditation",
+        "Description": "Rejoignez cette cérémonie bouddhiste de méditation pour trouver la paix intérieure et la sérénité.",
+        "Date_de_l_evenement": "7 septembre 2023 à 18h00",
+        "date_format": "2023-09-07",
+        "Adresse": "Temple de la Sagesse, 5 Rue de la Méditation, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Association Zen Harmonie",
+        "URL_d_image": "Cérémonie Bouddhiste de Méditation.jpeg",
+        "eventId": "SPI003"
+      }
+    ],
+    "Conférences et Rencontres Spirituelles": [
+      {
+        "Titre": "Conférence sur la Méditation Mindfulness",
+        "Description": "Découvrez les bienfaits de la méditation mindfulness lors de cette conférence animée par un spécialiste renommé.",
+        "Date_de_l_evenement": "10 septembre 2023 à 14h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Espace Harmonie, 20 Rue de la Sérénité, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Centre de Méditation Zen",
+        "URL_d_image": "Conférence sur la Méditation Mindfulness.jpeg",
+        "eventId": "SPI004"
+      },
+      {
+        "Titre": "Rencontre Spirituelle et Échanges",
+        "Description": "Participez à cette rencontre spirituelle pour échanger sur vos expériences et vos pratiques spirituelles.",
+        "Date_de_l_evenement": "28 aout 2023 à 15h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Espace Spirituel, 10 Rue de l'Échange, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Association pour l'Éveil Spirituel",
+        "URL_d_image": "Rencontre Spirituelle et Échanges.webp",
+        "eventId": "SPI005"
+      },
+      {
+        "Titre": "Conférence sur les Enseignements du Coran",
+        "Description": "Découvrez les enseignements du Coran lors de cette conférence animée par un érudit islamique.",
+        "Date_de_l_evenement": "7 septembre 2023 à 19h30",
+        "date_format": "2023-09-07",
+        "Adresse": "Centre Islamique, 5 Rue du Coran, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Centre Culturel Musulman",
+        "URL_d_image": "Conférence sur les Enseignements du Coran.jpeg",
+        "eventId": "SPI006"
+      }
+    ]
+  },
+"Catégorie Autres": {
+    "Événements Divers": [
+      {
+        "Titre": "Marché aux Puces",
+        "Description": "Venez chiner et faire de bonnes affaires lors de ce marché aux puces animé.",
+        "Date_de_l_evenement": "10 septembre 2023 de 8h00 à 16h00",
+        "date_format": "2023-09-10",
+        "Adresse": "Quartier des Puces, 20 Rue des Bonnes Affaires, 75012 Paris",
+        "Longitude": "2.367586",
+        "Latitude": "48.845050",
+        "Organisateur": "Association des Chineurs",
+        "URL_d_image": "Marché aux Puces.jpeg",
+        "eventId": "AUT001"
+      },
+      {
+        "Titre": "Spectacle de Magie et Illusions",
+        "Description": "Plongez dans l'univers mystérieux de la magie avec ce spectacle d'illusions captivant.",
+        "Date_de_l_evenement": "28 aout 2023 à 16h00",
+        "date_format": "2023-08-28",
+        "Adresse": "Théâtre des Illusions, 10 Rue de l'Émerveillement, 75014 Paris",
+        "Longitude": "2.330920",
+        "Latitude": "48.833534",
+        "Organisateur": "Compagnie des Magiciens",
+        "URL_d_image": "Spectacle de Magie et Illusions.jpeg",
+        "eventId": "AUT002"
+      },
+      {
+        "Titre": "Visite Guidée Insolite",
+        "Description": "Partez à la découverte des lieux insolites de Paris lors de cette visite guidée originale.",
+        "Date_de_l_evenement": "7 septembre 2023 à 14h30",
+        "date_format": "2023-09-07",
+        "Adresse": "Place des Curiosités, 5 Rue de l'Insolite, 75016 Paris",
+        "Longitude": "2.284590",
+        "Latitude": "48.858844",
+        "Organisateur": "Guide Passionné d'Histoire",
+        "URL_d_image": "Visite Guidée Insolite.jpeg",
+        "eventId": "AUT003"
+      }
+    ]
+  }
+}

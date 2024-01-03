@@ -1,0 +1,59 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegistrationController !
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="/assets/css/17-07-23-style.css">
+	<link rel="stylesheet" href="/assets/css/mathieu.css">
+{% endblock %}
+
+
+{% block body %}
+
+	{% block header %}{% endblock %}
+
+	<main>
+		<section id="inscription">
+			<div class="containerfluid">
+				<div class="row">
+					<div class="col-12 col-md-5 background">
+						<a href="#" class="logo"><img src="/assets/img/logo-gettogether-white.svg" alt=""></a>
+						<div class="divBack">
+							<div class="divSepa">
+								<p>Étape 1 sur 3</p>
+								<img src="/assets/img/step1.svg" alt="" class="imgStep">
+							</div>
+							<h1 class="h1perso">Choisissez votre pseudo<br>& votre ville</h1>
+						</div>
+					</div>
+
+
+					<div class="col-12 col-md-7 inscription">
+						<article class="cardsub">
+							<h1>Parcours de personnalisation</h1>
+							<p>Bienvenue dans votre parcours de personnalisation. Ce parcours n'est pas obligatoire mais vous permettera d'optimiser votre expérience "Get together".</p>
+							<div class="subform">
+								<div class="inputsub">
+									{{ form_start(profilForm) }}
+									{{ form_errors(profilForm) }}
+									{{ form_end(profilForm) }}
+								</div>
+							</div>
+
+						</article>
+					</div>
+				</div>
+			</div>
+
+
+		</section>
+
+	{% block footer %}{% endblock %}
+
+	</main>
+
+
+
+{% endblock %}

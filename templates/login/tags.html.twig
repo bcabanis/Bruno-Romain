@@ -1,0 +1,242 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+
+	<link rel="stylesheet" href="/assets/css/mat.css">
+	<link rel="stylesheet" href="/assets/css/usertags.css">
+
+	<link rel="stylesheet" href="/assets/css/17-07-23-style.css">
+	<link rel="stylesheet" href="/assets/css/mathieu.css">
+{% endblock %}
+
+{% block body %}
+
+	{% block header %}{% endblock %}
+
+	<main>
+		<!-- <section> -->
+		<div class="containerfluid">
+			<div class="row">
+				<div class="col-12 col-md-5 background">
+					<a href="#" class="logo"><img src="/assets/img/logo-gettogether-white.svg" alt=""></a>
+
+
+					<article class="etape3">
+						<div>
+							<p class="pEtape">Etape 3/3</p>
+							<img src="/assets/img/barreevolution3-3.svg" alt="">
+						</div>
+						<h1 class="h1perso">Choisissez vos tags pour vous proposer des events adaptés à votre profil.
+						</h1>
+						<p class="h1perso">Vos tags correspondent à vos centres d’intérêts en général. Vous pouvez les sélectionner en recherchant dans la barre de recherche ou en les filtrant. Vous pourrez modifier vos tags par la suite dans votre dashboard.
+						</p>
+					</article>
+
+				</div>
+
+
+				<div class="col-12 col-md-7" id="mestags">
+					<div class="entete">
+						<h1>Mes tags</h1>
+						<form class="form-tags" action="#" method="post" style="margin-bottom: 50px;">
+							<select class="form-select" aria-label="Default select example" name="categories" id="categories">
+								<option selected>Catégories</option>
+								<option value="Arts">Arts</option>
+								<option value="Business">Business</option>
+								<option value="Brunch-apéro">Brunch-apéro</option>
+								<option value="Communauté">Communauté</option>
+								<option value="Film-médias">Film-médias</option>
+								<option value="Musique">Musique</option>
+								<option value="Mode">Mode</option>
+								<option value="Sports-Fitness">Sports-Fitness</option>
+								<option value="Santé">Santé</option>
+							</select>
+
+							<input type="search" name="tagsearch" id="tagsearch" placeholder="Rechercher par tag">
+						</form>
+
+						<div class="enteteHeight">
+							<article id="Arts">
+								<h2 class="label-categorie">
+									<img src="/assets/img/art-category-icon.svg" alt="picto art">
+									Arts
+								</h2>
+								<div class="tag-management">
+									<button class="tag-choice">Comedy</button>
+									<button class="tag-choice">Sculpture</button>
+									<button class="tag-choice">Design</button>
+									<button class="tag-choice">Bijoux</button>
+									<button class="tag-choice">Ballet</button>
+									<button class="tag-choice">Chorales</button>
+									<button class="tag-choice">Comédies Musicales</button>
+									<button class="tag-choice">Danse</button>
+									<button class="tag-choice">Littérature</button>
+									<button class="tag-choice">Orchestres</button>
+									<button class="tag-choice">Peinture</button>
+								</div>
+							</article>
+
+							<article id="Business">
+								<h2 class="label-categorie">
+									<img src="/assets/img/business-category-icon.svg" alt="picto business">
+									Business
+								</h2>
+								<div class="tag-management">
+									<button class="tag-choice">ONG</button>
+									<button class="tag-choice">Start Ups</button>
+									<button class="tag-choice">Associations</button>
+									<button class="tag-choice">Carrières</button>
+									<button class="tag-choice">Investissement</button>
+									<button class="tag-choice">Immobilier</button>
+									<button class="tag-choice">Marketing</button>
+									<button class="tag-choice">Medias</button>
+									<button class="tag-choice">Petites entreprises</button>
+									<button class="tag-choice">Autres</button>
+								</div>
+							</article>
+
+							<article id="Brunch-apéro">
+								<h2 class="label-categorie">
+									<img src="/assets/img/brunch-apero-category-icon.svg" alt="picto Brunch & apéro">
+									Brunch & apéro
+								</h2>
+								<div class="tag-management">
+									<button class="tag-choice">Apéro</button>
+									<button class="tag-choice">Bière</button>
+									<button class="tag-choice">Brunch</button>
+									<button class="tag-choice">Culinaire</button>
+									<button class="tag-choice">Restaurants</button>
+									<button class="tag-choice">Spiritueux</button>
+									<button class="tag-choice">Autres</button>
+								</div>
+							</article>
+
+							<article id="Communauté">
+								<h2 class="label-categorie">
+									<img src="/assets/img/commuanute-category-icon.svg" alt="picto Communauté">
+									Communauté
+								</h2>
+								<div class="tag-management">
+									<button class="tag-choice">Actions Locales</button>
+									<button class="tag-choice">Bénévolat</button>
+									<button class="tag-choice">Cours particuliers</button>
+									<button class="tag-choice">Histoire</button>
+									<button class="tag-choice">Langues</button>
+									<button class="tag-choice">Nationalité</button>
+									<button class="tag-choice">Parrainages</button>
+									<button class="tag-choice">Participatif</button>
+									<button class="tag-choice">Autres</button>
+								</div>
+							</article>
+
+							<article id="Film-médias">
+								<h2 class="label-categorie">
+									<img src="/assets/img/film-medias-category-icon.svg" alt="picto Film & médias">
+									Film & médias
+								</h2>
+								<div class="tag-management">
+									<button class="tag-choice">Anime</button>
+									<button class="tag-choice">Adult</button>
+									<button class="tag-choice">Ciné-débat</button>
+									<button class="tag-choice">Comédie</button>
+									<button class="tag-choice">Comics</button>
+									<button class="tag-choice">Film</button>
+									<button class="tag-choice">Gaming</button>
+									<button class="tag-choice">Autres</button>
+								</div>
+							</article>
+
+							<article id="Musique">
+								<h2 class="label-categorie">
+									<img src="/assets/img/musique-category-icon.svg" alt="picto Musique">
+									Musique
+								</h2>
+								<div class="tag-management">
+									<button class="tag-choice">Alternatif</button>
+									<button class="tag-choice">Blues</button>
+									<button class="tag-choice">Classique</button>
+									<button class="tag-choice">Dj/Dance</button>
+									<button class="tag-choice">Concert</button>
+									<button class="tag-choice">Electro</button>
+									<button class="tag-choice">Festival</button>
+									<button class="tag-choice">Folk</button>
+									<button class="tag-choice">Hip Hop/Rap</button>
+									<button class="tag-choice">Jazz</button>
+									<button class="tag-choice">Jam</button>
+									<button class="tag-choice">Techno</button>
+									<button class="tag-choice">Reggae</button>
+									<button class="tag-choice">Live Music</button>
+								</div>
+							</article>
+
+							<article id="Mode">
+								<h2 class="label-categorie">
+									<img src="/assets/img/mode-category-icon.svg" alt="picto Mode">
+									Mode
+								</h2>
+								<div class="tag-management">
+									<button class="tag-choice">Accesoires</button>
+									<button class="tag-choice">Beauté</button>
+									<button class="tag-choice">Vide-grenier</button>
+									<button class="tag-choice">Maquillage</button>
+									<button class="tag-choice">Autres</button>
+								</div>
+							</article>
+
+							<article id="Sports-Fitness">
+								<h2 class="label-categorie">
+									<img src="/assets/img/sport-category-icon.svg" alt=" picto Sports & Fitness">
+									Sports & Fitness
+								</h2>
+								<div class="tag-management">
+									<button class="tag-choice">Arts Martiaux</button>
+									<button class="tag-choice">Basket</button>
+									<button class="tag-choice">Cyclisme</button>
+									<button class="tag-choice">Football</button>
+									<button class="tag-choice">Golf</button>
+									<button class="tag-choice">Hockey sur Gazon</button>
+									<button class="tag-choice">Marche</button>
+									<button class="tag-choice">Moto</button>
+									<button class="tag-choice">Tennis</button>
+									<button class="tag-choice">Yoga</button>
+								</div>
+							</article>
+
+							<article id="Santé">
+								<h2 class="label-categorie">
+									<img src="/assets/img/sante-category-icon.svg" alt=" picto Santé">
+									Santé
+								</h2>
+								<div class="tag-management">
+									<button class="tag-choice">Bien-être</button>
+									<button class="tag-choice">Hypnose</button>
+									<button class="tag-choice">Méditation</button>
+									<button class="tag-choice">Santé mentale</button>
+									<button class="tag-choice">Spa</button>
+									<button class="tag-choice">Yoga</button>
+									<button class="tag-choice">Autres</button>
+								</div>
+							</article>
+						</div>
+						<div class="btn-enr">
+
+							<a class="retourpage" href="{{ path('app_login_avatar') }}">
+								Retour à l'étape précédente
+							</a>
+
+							<button id="btn-tags-save" class="enregistrer-changements"><a href="{{ path('app_dashboard') }}">Enregistrer les changements</a></button>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<!-- </section> -->
+		{% block footer %}{% endblock %}
+		
+	</main>
+	<script src="/assets/js/usertags.js"></script>
+{% endblock %}

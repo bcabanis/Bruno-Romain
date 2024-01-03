@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EventController!{% endblock %}
+
+{% block body %}
+
+<section>
+
+    {% for data in jsonData %}
+
+        <article class="card-event">
+            <h4>{{ data.title }}</h4>
+            <p>{{ data.description }}</p>
+            <p>{{ data.adresse }}</p>
+            <p>{{ data.date }}</p>
+            <img src="{{ data.image }}" alt="">
+            
+            <a href="#" data-id-event="{{ data.unique_id }}" class="btn-primary btn btn-participer">Participer</a>
+        </article>
+
+    {% endfor %}
+
+</section>
+
+<script src="/assets/JavaScript/test.js"></script>
+{% endblock %}

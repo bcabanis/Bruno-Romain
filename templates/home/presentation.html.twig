@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="/assets/css/17-07-23-style.css">
+	<link rel="stylesheet" href="/assets/css/mathieu.css">
+{% endblock %}
+
+{% block body %}
+	<main>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-md-5 background">
+					<a href="#" class="logo"><img src="/assets/img/logo-timeout-white.svg" alt="logo GetTogether"></a>
+				</div>
+
+				<div class="bienvenue-content col-12 col-md-7">
+					<h1>Bienvenue sur Time Out Get&nbsp;together&nbsp;!</h1>
+					<div class="bienvenue-rubriques ligne1">
+						<article class="card-bienvenue">
+							<img src="/assets/img/refonte-design-icon.svg" alt="picto refonte">
+							<h2>Refonte design</h2>
+							<p>Une amélioration  de l’interface Time Out afin de vous garantir une expérience fluide, agréable et ergonomique.</p>
+						</article>
+						<article class="card-bienvenue even">
+							<img src="/assets/img/experience-personnalisee-icon.svg" alt="picto Expérience personalisée">
+							<h2>Expérience personalisée</h2>
+							<p>Des événements et des communautés associés, basés sur vos centres d’intérêts.
+							</p>
+						</article>
+					</div>
+
+					<div class="bienvenue-rubriques ligne2">
+						<article class="card-bienvenue">
+							<img src="/assets/img/parcours-customise-icon.svg" alt="picto Parcours customisé">
+							<h2>Parcours customisé</h2>
+							<p>La possibilité de revenir à tous moments sur vos centres d’intérêts associés aux tags. Ains qu’aux events liés.</p>
+						</article>
+						<article class="card-bienvenue even">
+							<img src="/assets/img/nouvelle-communaute-icon.svg" alt="picto Nouvelle communauté">
+							<h2>Nouvelle communauté</h2>
+							<p>Créer du lien ainsi que fédérer des communautés autour  d’événements et intérêts communs.</p>
+						</article>
+					</div>
+
+					<a class="bienvenue-sinscrire inputsub btninscrire btn-valide colorWhite" href="{{ path('app_registration') }}">S’inscrire</a>
+
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}
