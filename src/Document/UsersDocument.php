@@ -3,9 +3,9 @@
 namespace App\Document;
 
 use DateTimeInterface;
-use Doctrine\Common\Collections\ArrayCollection;
+// use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-use Symfony\Component\Validator\Constraints as Assert;
+// use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[MongoDB\Document]
@@ -47,6 +47,7 @@ class Users implements PasswordAuthenticatedUserInterface
 
     #[MongoDB\Field(type: 'collection')]
     private array $tagsByCategory = [];
+    // private ArrayCollection $tagsByCategory = [];
 
     #[MongoDB\Field(type: 'boolean')]
     private bool $filled = false;
