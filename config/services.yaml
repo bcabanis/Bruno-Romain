@@ -20,7 +20,8 @@ services:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../src/Entity/'
+            # - '../src/Entity/' 
+            # J'ai commandé pour le pas avoir besoin du dossier "Entity"
             - '../src/Kernel.php'
 
 
