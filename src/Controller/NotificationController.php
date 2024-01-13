@@ -11,6 +11,10 @@ class NotificationController extends AbstractController
     #[Route('/notification', name: 'app_notification')]
     public function index(): Response
     {
+
+
+        echo sys_get_temp_dir();
+
         return $this->render('notification/index.html.twig', [
             'controller_name' => 'NotificationController',
         ]);

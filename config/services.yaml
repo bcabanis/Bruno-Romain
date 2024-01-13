@@ -21,7 +21,7 @@ services:
         exclude:
             - '../src/DependencyInjection/'
             # - '../src/Entity/' 
-            # J'ai commandé pour le pas avoir besoin du dossier "Entity"
+            # J'ai commenté pour le pas avoir besoin du dossier "Entity"
             - '../src/Kernel.php'
 
 
