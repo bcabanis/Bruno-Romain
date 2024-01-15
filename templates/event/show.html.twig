@@ -139,7 +139,7 @@ replyForm.style.display = 'block';
 								{% if message.user %}
 									<article style="margin-bottom: 20px; min-height: 100px;">
 										<div class="d-flex">
-											<img class="userpic" src="/assets/img/patrick.png" alt="Profil pic">
+											<img class="userpic" src="/uploads/photos/{{ message.user.profilPicture }}" alt="Profil pic">
 											<div class="d-flex justify-content-between usermore">
 												<p class="bold">{{ message.user.pseudo }}
 													<span>aujourd'hui à 15h35</span>
