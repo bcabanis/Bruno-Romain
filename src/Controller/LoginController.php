@@ -185,6 +185,29 @@ class LoginController extends AbstractController
         ]);
     }
 
+    #[Route('/tags/save/{jsontags}', name: 'app_login_tags_save')]
+    public function saveTags($jsontags, UserRepository $userRepository, SessionInterface $sessionInterface): JsonResponse
+    {
+        // Récupérer l'email de l'utilisateur connecté depuis la session
+        $email = $sessionInterface->get('email');
+    
+        // Récupérer l'utilisateur depuis la base de données en utilisant l'email
+        $user = $userRepository->findOneBy(['email' => $email]);
+    
+        // récupère la liste complète des tags de l'utilisateur
+        $tags = json_decode($jsontags);
+    
+        // Mettre à jour la propriété tagsByCategory de l'utilisateur avec les tags sélectionnés
+        $user->setTagsByCategory($tags);
+        $user->fill();
+    
+        // faire ici l'ajout à la bdd
+        $userRepository->save($user);
+    
+        // renvoie la réponse
+        return new JsonResponse(['ok']);
+    }
+
     // #[Route('/tags/save/{jsontags}', name: 'app_login_tags_save')]
     // /**
     //  * Route de sauvegarde de la lsite des tags du user
