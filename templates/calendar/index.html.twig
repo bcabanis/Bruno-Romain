@@ -13,11 +13,14 @@
         }
         </style>
             <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+             <script src='fullcalendar/dist/index.global.js'></script>
             <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const calendarEl = document.getElementById('calendar')
                 const calendar = new FullCalendar.Calendar(calendarEl, {
+                // plugins: [ interactionPlugin, dayGridPlugin ],
                 initialView: 'dayGridMonth'
+                // selectable: true
                 })
                 calendar.render()
             })
