@@ -19,8 +19,15 @@
                 const calendarEl = document.getElementById('calendar')
                 const calendar = new FullCalendar.Calendar(calendarEl, {
                 // plugins: [ interactionPlugin, dayGridPlugin ],
-                initialView: 'dayGridMonth'
-                // selectable: true
+                initialView: 'dayGridMonth',
+                selectable: true,
+                locale : 'fr',
+                timeZone : 'Europe/Paris',
+                headerToolbar : {
+                    start : 'prev,next today',
+                    center : 'title',
+                    end : 'dayGridMonth,timeGridWeek'
+                }
                 })
                 calendar.render()
             })
