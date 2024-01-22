@@ -16,9 +16,6 @@ class CalendarController extends AbstractController
     {
         // Recherche des événements dans la base de données
         $events = $eventRepository->findAll();
-    
-        // // Initialisez le tableau pour stocker tous les titres
-        // $titles = [];
         
         // Initialisez le tableau pour stocker tous les événements
         $calendarEvents = [];
@@ -30,15 +27,10 @@ class CalendarController extends AbstractController
                 'start' => $event->getDateFormat()->format('Y-m-d'),
                 'end' => $event->getDateFormat()->format('Y-m-d'),
             ];
-            // $titles[] = $title; 
-            // $dateFormats[] = $dateFormat; 
             $calendarEvents[] = $calendarEvent;
         }
     
-        dump($calendarEvents);
-        // dump($events);
-        // dump($titles);
-        // dump($dateFormats);
+        // dump($calendarEvents);
     
         return $this->render('calendar/index.html.twig', [
             'controller_name' => 'CalendarController',

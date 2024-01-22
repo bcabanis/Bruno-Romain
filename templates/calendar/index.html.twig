@@ -29,6 +29,21 @@
                     end : 'dayGridMonth,timeGridWeek'
                 },
                 events: {{ calendarEvents|json_encode|raw }}, // Utilisez les événements ici
+                eventDisplay : 'block',
+                 dateClick: function(info) {
+                    if (info.event) {
+                        alert('Event Title: ' + info.events.title);
+                    }
+                    else {
+                        alert('No event clicked for this date.');
+                    }
+
+                    alert('Clicked on: ' + info.dateStr);
+                    alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+                    alert('Current view: ' + info.view.type);
+                    // change the day's background color just for fun
+                    // info.dayEl.style.backgroundColor = 'red';
+                }
                 })
                 calendar.render()
             })
