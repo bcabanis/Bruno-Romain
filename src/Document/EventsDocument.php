@@ -61,7 +61,7 @@ class Events
         return $this->category;
     }
 
-    public function getDateFormat(): ?string
+    public function getDateFormat(): ?\DateTimeInterface
     {
         return $this->dateFormat;
     }
