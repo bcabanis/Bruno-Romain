@@ -27,7 +27,8 @@
                     start : 'prev,next today',
                     center : 'title',
                     end : 'dayGridMonth,timeGridWeek'
-                }
+                },
+                events: {{ calendarEvents|json_encode|raw }}, // Utilisez les événements ici
                 })
                 calendar.render()
             })

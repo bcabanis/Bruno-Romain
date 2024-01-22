@@ -26,8 +26,9 @@ class CalendarController extends AbstractController
         // Boucle sur tous les événements pour récupérer les données et les afficher
         foreach ($events as $event) {
             $calendarEvent = [
-            $title = $event->getTitle(),
-            $dateFormat = $event->getDateFormat()->format('Y-m-d'),
+                'title' => $event->getTitle(),
+                'start' => $event->getDateFormat()->format('Y-m-d'),
+                'end' => $event->getDateFormat()->format('Y-m-d'),
             ];
             // $titles[] = $title; 
             // $dateFormats[] = $dateFormat; 
@@ -41,6 +42,7 @@ class CalendarController extends AbstractController
     
         return $this->render('calendar/index.html.twig', [
             'controller_name' => 'CalendarController',
+            'calendarEvents' => $calendarEvents,
         ]);
     }
 }
