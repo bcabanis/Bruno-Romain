@@ -30,11 +30,14 @@ class CalendarController extends AbstractController
             $calendarEvents[] = $calendarEvent;
         }
     
-        // dump($calendarEvents);
-    
+        dump($calendarEvents);
+        dump($calendarEvent);
+
+        $datas = json_encode($calendarEvents);
+        
         return $this->render('calendar/index.html.twig', [
             'controller_name' => 'CalendarController',
-            'calendarEvents' => $calendarEvents,
+            'datas' => $datas,
         ]);
     }
 }

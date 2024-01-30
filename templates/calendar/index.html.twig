@@ -8,51 +8,54 @@
         <head>
            <style>
         #calendar {
-            width: 50%;
+            width: 300px;
+            height : 200px;
             margin: auto;
-        }
-        </style>
+            font-size: 7px;
+            }
+
+            </style>
+
             <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
-             <script src='fullcalendar/dist/index.global.js'></script>
+            {# <script src='fullcalendar/dist/index.global.js'></script> #}
+
             <script>
             document.addEventListener('DOMContentLoaded', function() {
+               
                 const calendarEl = document.getElementById('calendar')
+               
                 const calendar = new FullCalendar.Calendar(calendarEl, {
-                // plugins: [ interactionPlugin, dayGridPlugin ],
-                initialView: 'dayGridMonth',
-                selectable: true,
-                locale : 'fr',
-                timeZone : 'Europe/Paris',
-                headerToolbar : {
-                    start : 'prev,next today',
-                    center : 'title',
-                    end : 'dayGridMonth,timeGridWeek'
-                },
-                events: {{ calendarEvents|json_encode|raw }}, // Utilisez les événements ici
-                eventDisplay : 'block',
-                 dateClick: function(info) {
-                    if (info.event) {
-                        alert('Event Title: ' + info.events.title);
-                    }
-                    else {
-                        alert('No event clicked for this date.');
-                    }
+                        initialView: 'dayGridMonth',
+                        selectable: true,
+                        locale : 'fr',
+                        timeZone : 'Europe/Paris',
+                        headerToolbar : {
+                                        start : 'prev,next',
+                                        center : 'title',
+                                        end : 'dayGridMonth'
+                                        },
+                        events: {{ datas|raw }},
+                        // resourceAreaWidth : "150%",
+                        // editable : true,
+                        //eventResizableFromStart : true,
+                        eventDisplay : 'block',
+                        eventClick: function(info) {
+                                        if (info.event) {
+                                            alert('Evènement : ' + info.event.title);
+                                          //  window.open(info.event.url);
+                                        }
+                                        else {
+                                            alert('No event clicked for this date.');
+                                        }
+                                    }
+                                                                        })
 
-                    alert('Clicked on: ' + info.dateStr);
-                    alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-                    alert('Current view: ' + info.view.type);
-                    // change the day's background color just for fun
-                    // info.dayEl.style.backgroundColor = 'red';
-                }
-                })
                 calendar.render()
-            })
+                                                                        })
             </script>
         </head>
-
         <body>
             <div id='calendar'></div>
-        </body>
-            
-</html>
+        </body>    
+        </html>
 {% endblock %}
