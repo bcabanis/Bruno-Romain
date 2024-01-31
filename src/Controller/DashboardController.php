@@ -114,19 +114,4 @@ class DashboardController extends AbstractController
         return new JsonResponse(['ok']);
     }
 
-    //  /**
-    //  * @Route("/get_user_tags", name="get_user_tags", methods={"GET"})
-    //  */
-    // public function getUserTags()
-    // {
-    //     // Récupérer l'utilisateur connecté (tu peux utiliser la méthode getCurrentUser() ou tout autre méthode que tu as implémentée pour récupérer l'utilisateur)
-    //     $user = $this->getUser();
-
-    //     // Récupérer les tags de l'utilisateur depuis la propriété tagsByCategory
-    //     $tagsByCategory = $user->getTagsByCategory();
-
-    //     // Retourner les tags sous forme de réponse JSON
-    //     return new JsonResponse(['tagsByCategory' => $tagsByCategory]);
-    // }
-
 }
