@@ -24,16 +24,6 @@ class CallApiService
         return $response->toArray();
     }
 
-    // public function getDataByDate(string $year, string $month, string $day)
-    // {
-    //     $response = $this->client->request(
-    //         'GET',
-    //         'https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-openagenda&q=&refine.updatedat=' . $year . '%2F' . $month . '%2F' . $day . '&refine.location_city=Paris'
-    //     );
-
-    //     return $response->toArray();
-    // }
-
 }
 
 

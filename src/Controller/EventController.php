@@ -31,7 +31,7 @@ class EventController extends AbstractController
         $adresse = "";
         $image = "";
         $unique_id = "";
-        $date = "";
+        $dateFormat = "";
 
         $dataForJs = [];
         $dataTabForJs = [];
@@ -45,11 +45,10 @@ class EventController extends AbstractController
             $title = $e[$i]->getTitle();
             $description = $e[$i]->getDescription();
             $category = $e[$i]->getCategory();
-            $date = $e[$i]->getEventDate();
-            $adresse = $e[$i]->getAddress();
+            $dateFormat = $e[$i]->getDateFormat();
             $adresse = $e[$i]->getAddress();
             $image = $e[$i]->getImageUrl();
-            $unique_id = $e[$i]->getUniqueId();
+            $unique_id = $e[$i]->getEventId();
 
             // Tableau d'un événement
             $dataForJs = [
@@ -58,7 +57,7 @@ class EventController extends AbstractController
                 'adresse' => $adresse,
                 'image' => $image,
                 'unique_id' => $unique_id,
-                'date' => $date,
+                'dateFormat' => $dateFormat,
                 'category' => $category,
             ];
 

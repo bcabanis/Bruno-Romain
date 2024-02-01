@@ -142,12 +142,12 @@ class Events
         return $this;
     }
 
-    public function geteventId(): ?string
+    public function getEventId(): ?string
     {
         return $this->eventId;
     }
 
-    public function seteventId(string $eventId): self
+    public function setEventId(string $eventId): self
     {
         $this->eventId = $eventId;
         return $this;
