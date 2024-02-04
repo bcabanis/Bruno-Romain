@@ -38,7 +38,6 @@ class EventController extends AbstractController
 
         // Recherche des événements dans la base de données
         $e = $eventRepository->findAll();
-        // dd($eventsData);
 
         // Boucle sur tous les événements pour récupérer les données et les afficher
         for ($i = 0; $i < count($e); $i++) {
@@ -125,8 +124,10 @@ class EventController extends AbstractController
         
         // Si l'évènement n'existe pas on renvoie un message d'erreur
         if (!$event) {
-            throw $this->createNotFoundException('Aucun évènement trouvé.');
-        }
+            // Renvoie vers la vue error.html.twig
+        return $this->render('event/error.html.twig', [], new Response('', 404));
+    }
+
 
         // Récupère les messages de chat associés à l'événement
         $chatMessages = $chatMessageRepository->findBy(['event' => $event]);
