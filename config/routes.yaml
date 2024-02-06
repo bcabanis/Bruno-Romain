@@ -6,8 +6,3 @@ kernel:
     resource: ../src/Kernel.php
     type: annotation
 
-# Ajout de Romain pour afficher \categories, à supprimer si conflits
-app_event_categories:
-    path: /categories
-    controller: App\Controller\EventController::categories
-    methods: GET

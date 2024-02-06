@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Repository\UserRepository;
 use App\Repository\EventRepository;
 use App\Repository\CalendarRepository;
-use App\Repository\CategoryRepository;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -54,27 +53,6 @@ class DashboardController extends AbstractController
             'user' => $user,
             'events' => $events,
             'datas' => $datas,
-        ]);
-    }
-
-    #[Route('/categories', name: 'app_dashboard_categories')]
-    public function categories(CategoryRepository $categoryRepository, EventRepository $eventRepository, DocumentManager $dm): Response
-    {
-        // Récupère toutes les catégories depuis la base de données MongoDB.
-        $categories = $categoryRepository->findAllCategories();
-
-        // Récupérer tous les événements depuis la base de données MongoDB.
-        $events = $eventRepository->findAll();
-
-        // Récupérer le nom de l'utilisateur loggé depuis la bse de MongoDB.
-        $firstName = "Maxime";
-
-
-        // Rend la vue event/categories.html.twig avec les catégories et les événements récupérés
-        return $this->render('dashboard/categories.html.twig', [
-            'categories' => $categories,
-            'events' => $events, // Passer les événements à la vue pour les afficher
-            'firstName' => $firstName,
         ]);
     }
 
