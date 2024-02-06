@@ -2,73 +2,82 @@
 
 namespace App\Controller;
 
-use App\Document\ChatMessage;
 use App\Document\Events;
-use App\Repository\ChatMessageRepository;
-use App\Repository\EventRepository;
+use App\Document\ChatMessage;
 use App\Service\CallApiService;
+use App\Repository\UserRepository;
+use App\Repository\EventRepository;
+use App\Repository\ChatMessageRepository;
 use Doctrine\ODM\MongoDB\DocumentManager;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/event')]
 class EventController extends AbstractController
 {
-
     // Affichage de tous les événements (pas spécielement utile)
     #[Route('/affichage', name: 'app_event_affichage')]
-    public function AfficheEvent(EventRepository $eventRepository, CallApiService $callApiService, DocumentManager $dm): Response
+    
+    public function AfficheEvent(EventRepository $eventRepository, CacheInterface $cache, DocumentManager $dm): Response
     {
 
-        // Variables qui seront reprises pour le partage de données vers la vue
-        $category = "";
-        $title = "";
-        $description = "";
-        $adresse = "";
-        $image = "";
-        $unique_id = "";
-        $dateFormat = "";
+        $dataTabForJs = $cache->get('events_cache', function ($item) use ($eventRepository) {
+            
+                $events = $eventRepository->findAll();
+                $dataTabForJs = [];
 
-        $dataForJs = [];
-        $dataTabForJs = [];
+                // Itération sur chaque événement pour construire le tableau final
+                foreach ($events as $event) {
+                $dataForJs = [
+                    'title' => $event->getTitle(),
+                    'description' => $event->getDescription(),
+                    'adresse' => $event->getAddress(),
+                    'image' => $event->getImageUrl(),
+                    'unique_id' => $event->getEventId(),
+                    'dateFormat' => $event->getDateFormat(),
+                    'category' => $event->getCategory(),
+                                ];
 
-        // Recherche des événements dans la base de données
-        $e = $eventRepository->findAll();
+                    // On ajoute toutes les données des events (title, image...) dans un tableau final de tous les événements
+                    $dataTabForJs[] = $dataForJs;
+                                        }
 
-        // Boucle sur tous les événements pour récupérer les données et les afficher
-        for ($i = 0; $i < count($e); $i++) {
-            $title = $e[$i]->getTitle();
-            $description = $e[$i]->getDescription();
-            $category = $e[$i]->getCategory();
-            $dateFormat = $e[$i]->getDateFormat();
-            $adresse = $e[$i]->getAddress();
-            $image = $e[$i]->getImageUrl();
-            $unique_id = $e[$i]->getEventId();
+            return $dataTabForJs;
+    });
 
-            // Tableau d'un événement
-            $dataForJs = [
-                'title' => $title,
-                'description' => $description,
-                'adresse' => $adresse,
-                'image' => $image,
-                'unique_id' => $unique_id,
-                'dateFormat' => $dateFormat,
-                'category' => $category,
-            ];
-
-            // Tableau des événements
-            $dataTabForJs[] = $dataForJs;
-        }
-
-        // Retourne les données dans le template requis 
+        // Dump du contenu du tableau final
+        // dump($dataTabForJs);
+        
         return $this->render('event/affichage.html.twig', [
             'jsonData' => $dataTabForJs,
         ]);
     }
+
+    // public function GetEvents(EventRepository $eventRepository, CacheInterface $cache, DocumentManager $dm): Response
+    // {
+    // $events = $eventRepository->findAll();
+    // $dataTabForJs = [];
+
+    // // Itération sur chaque événement pour construire le tableau final
+    // foreach ($events as $event) {
+    // $dataForJs = [
+    //     'title' => $event->getTitle(),
+    //     'description' => $event->getDescription(),
+    //     'adresse' => $event->getAddress(),
+    //     'image' => $event->getImageUrl(),
+    //     'unique_id' => $event->getEventId(),
+    //     'dateFormat' => $event->getDateFormat(),
+    //     'category' => $event->getCategory(),
+    //                 ];
+
+    //     // On ajoute toutes les données des events (title, image...) dans un tableau final de tous les événements
+    //     $dataTabForJs[] = $dataForJs;
+    //                         }
+    //                     }
 
 
     // Envoie des évenements en BDD
@@ -127,7 +136,6 @@ class EventController extends AbstractController
             // Renvoie vers la vue error.html.twig
         return $this->render('event/error.html.twig', [], new Response('', 404));
     }
-
 
         // Récupère les messages de chat associés à l'événement
         $chatMessages = $chatMessageRepository->findBy(['event' => $event]);

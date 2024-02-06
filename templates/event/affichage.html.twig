@@ -10,9 +10,11 @@
 
         <article class="card-event">
             <h4>{{ data.title }}</h4>
+            <p>{{ data.image }}</p>
+            <p>{{ data.unique_id }}</p>
             <p>{{ data.category }}</p>
-            {# <p>{{ data.orga }}</p> #}
             <p>{{ data.dateFormat.format('Y-m-d') }}</p>
+
             <img src="{{ data.image }}" alt="">
             
             <a href="#" data-id-event="{{ data.unique_id }}" class="btn-primary btn btn-participer">Participer</a>
