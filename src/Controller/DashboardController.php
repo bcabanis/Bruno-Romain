@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Repository\UserRepository;
 use App\Repository\EventRepository;
-use App\Repository\CalendarRepository;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DashboardController extends AbstractController
 {
     #[Route('/dashboard', name: 'app_dashboard')]
-    public function index(SessionInterface $sessionInterface, UserRepository $userRepository, CalendarRepository $calendarRepository, EventRepository $eventRepository): Response
+    public function index(SessionInterface $sessionInterface, UserRepository $userRepository, EventRepository $eventRepository): Response
     {
 
         // Récupère l'email de l'utilisateur connecté depuis la session
@@ -23,9 +22,11 @@ class DashboardController extends AbstractController
 
         // Récupère l'utilisateur depuis la base de données en utilisant l'email
         $user = $userRepository->findOneBy(['email' => $email]);
-        $events = $eventRepository->findAll();
         // Récupérer les tags de l'utilisateur
         $tagsByCategory = $user->getTagsByCategory();
+
+        // Récupérer tous les événements
+        $events = $eventRepository->findAll();
 
         // Reformater les données pour organiser les tags par catégorie
         $tagsGroupedByCategory = [];
@@ -47,6 +48,7 @@ class DashboardController extends AbstractController
            }
    
            $datas = json_encode($calendarEvents);
+        //    dump($calendarEvents);
 
         return $this->render('dashboard/index.html.twig', [
             'tagsByCategory' => $tagsGroupedByCategory,
@@ -107,7 +109,7 @@ class DashboardController extends AbstractController
     }
 
     #[Route('/calendar', name: 'app_calendar')]
-    public function calendar(CalendarRepository $calendarRepository, EventRepository $eventRepository): Response
+    public function calendar(EventRepository $eventRepository): Response
     {
         // Recherche des événements dans la base de données
         $events = $eventRepository->findAll();

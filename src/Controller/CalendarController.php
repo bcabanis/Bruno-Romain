@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Repository\EventRepository;
-use App\Repository\CalendarRepository;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CalendarController extends AbstractController
 {
     #[Route('/calendar', name: 'app_calendar')]
-    public function index(CalendarRepository $calendarRepository, EventRepository $eventRepository): Response
+    public function index(EventRepository $eventRepository): Response
     {
         // Recherche des événements dans la base de données
         $events = $eventRepository->findAll();
