@@ -4,7 +4,31 @@
 
 {% for item in data %}
   <div> 
-        {{ item.title_fr }}
+  <br>
+        {{ item.title }}
+        <br><br>
+        {{ item.description }}
+        <br><br>
+        {{ item.location_coordinates.long }}
+        <br><br>
+        {{ item.location_coordinates.lat }}
+        <br><br>
+        {{ item.address }}
+        <br><br>
+        <img src = "{{ item.image_url }}"></img>
+        <br><br>
+        {{ item.orga }}
+        <br><br>
+        {{ item.longdescription }}
+        <br><br>
+        {{ item.orga }}
+        <br><br>
+        {{ item.date }}
+        <br><br>
+        {{ item.start }}
+        <br><br>
+        {{ item.end }}
+
   </div>
 {% endfor %}
 

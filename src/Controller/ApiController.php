@@ -44,8 +44,25 @@ class ApiController extends AbstractController
 
         foreach ($results as $result) {
             
+            $imageUrl = !empty($result['image']) ? $result['image'] : '/assets/img/nopicture.jpg';
             $data = [
-                'title_fr' => $result['title_fr'],
+                'title' => $result['title_fr'], // ok
+                'description' => $result['description_fr'], // ok
+                'image_url' => $imageUrl, // ok
+                'address' => $result['location_address'], // ok
+                'eventId' => $result['uid'], // ok
+                'orga' => $result['location_name'], //ok
+                'date' => $result['daterange_fr'], // ok
+                'location_coordinates' => [
+                    'long' => $result['location_coordinates']['lon'],
+                    'lat' => $result['location_coordinates']['lat']
+                ], // ok
+                'longdescription' => strip_tags($result['longdescription_fr']), 
+
+                'start' => $result['firstdate_begin'],
+                'end' => $result['firstdate_end'],
+                'last_start' => $result['lastdate_begin'],
+                'last_end' => $result['lastdate_end'],              
             ];
 
             $completeData[] = $data;
