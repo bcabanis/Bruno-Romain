@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\NewApiService;
 use App\Repository\UserRepository;
 use App\Repository\EventRepository;
 use Doctrine\ODM\MongoDB\DocumentManager;
@@ -14,38 +15,42 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DashboardController extends AbstractController
 {
     #[Route('/dashboard', name: 'app_dashboard')]
-    public function index(SessionInterface $sessionInterface, UserRepository $userRepository, EventRepository $eventRepository): Response
+    public function index(SessionInterface $sessionInterface, UserRepository $userRepository, EventRepository $eventRepository, NewApiService $api): Response
     {
 
-        // Récupère l'email de l'utilisateur connecté depuis la session
+        // Select the current user
         $email = $sessionInterface->get('email');
-
-        // Récupère l'utilisateur depuis la base de données en utilisant l'email
         $user = $userRepository->findOneBy(['email' => $email]);
+
         // Récupérer les tags de l'utilisateur
         $tagsByCategory = $user->getTagsByCategory();
 
-        // Récupérer tous les événements
-        $events = $eventRepository->findAll();
-
         // Reformater les données pour organiser les tags par catégorie
         $tagsGroupedByCategory = [];
+
         foreach ($tagsByCategory as $tag) {
             $tagsGroupedByCategory[] = $tag; // Utilise $tag à la fois comme clé et valeur
         }
-        
-           // Initialisez le tableau pour stocker tous les événements
-           $calendarEvents = [];
+
+        // On charge les données de l'API 
+        $apiDatas = $api->getDatas();
        
-           // Boucle sur tous les événements pour récupérer les données et les afficher
-           foreach ($events as $event) {
-               $calendarEvent = [
-                   'title' => $event->getTitle(),
-                   'start' => $event->getDateFormat()->format('Y-m-d'),
-                   'end' => $event->getDateFormat()->format('Y-m-d'),
-               ];
-               $calendarEvents[] = $calendarEvent;
-           }
+        // Récupérer tous les événements
+        $events = $eventRepository->findAll();
+
+
+        // On initialise le FullCalendar
+        $calendarEvents = [];
+       
+        // Boucle sur tous les événements pour récupérer les données et les afficher
+        foreach ($apiDatas as $apiData) {
+            $calendarEvent = [
+                'title' => $apiData['title'],
+                'start' => (new \DateTime($apiData['start']))->format('Y-m-d'),
+                'end' => (new \DateTime($apiData['end']))->format('Y-m-d'),
+            ];
+            $calendarEvents[] = $calendarEvent;
+        }
    
            $datas = json_encode($calendarEvents);
         //    dump($calendarEvents);
@@ -57,6 +62,51 @@ class DashboardController extends AbstractController
             'datas' => $datas,
         ]);
     }
+
+    // #[Route('/dashboard', name: 'app_dashboard')]
+    // public function index(SessionInterface $sessionInterface, UserRepository $userRepository, EventRepository $eventRepository): Response
+    // {
+
+    //     // Récupère l'email de l'utilisateur connecté depuis la session
+    //     $email = $sessionInterface->get('email');
+
+    //     // Récupère l'utilisateur depuis la base de données en utilisant l'email
+    //     $user = $userRepository->findOneBy(['email' => $email]);
+    //     // Récupérer les tags de l'utilisateur
+    //     $tagsByCategory = $user->getTagsByCategory();
+
+    //     // Récupérer tous les événements
+    //     $events = $eventRepository->findAll();
+
+    //     // Reformater les données pour organiser les tags par catégorie
+    //     $tagsGroupedByCategory = [];
+    //     foreach ($tagsByCategory as $tag) {
+    //         $tagsGroupedByCategory[] = $tag; // Utilise $tag à la fois comme clé et valeur
+    //     }
+        
+    //        // Initialisez le tableau pour stocker tous les événements
+    //        $calendarEvents = [];
+       
+    //        // Boucle sur tous les événements pour récupérer les données et les afficher
+    //        foreach ($events as $event) {
+    //            $calendarEvent = [
+    //                'title' => $event->getTitle(),
+    //                'start' => $event->getDateFormat()->format('Y-m-d'),
+    //                'end' => $event->getDateFormat()->format('Y-m-d'),
+    //            ];
+    //            $calendarEvents[] = $calendarEvent;
+    //        }
+   
+    //        $datas = json_encode($calendarEvents);
+    //     //    dump($calendarEvents);
+
+    //     return $this->render('dashboard/index.html.twig', [
+    //         'tagsByCategory' => $tagsGroupedByCategory,
+    //         'user' => $user,
+    //         'events' => $events,
+    //         'datas' => $datas,
+    //     ]);
+    // }
 
     #[Route('/mestags', name: 'app_dashboard_mestags')]
     public function mestags(SessionInterface $session, UserRepository $userRepo): Response
