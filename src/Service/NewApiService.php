@@ -1,17 +1,14 @@
 <?php
 
-namespace App\Controller;
+namespace App\Service;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-// le but de cette classe est de faire apparaitre les résultats de l'API
-
-class ApiController extends AbstractController
+class NewApiService
 {
-
+    
     private $client;
 
     public function __construct(HttpClientInterface $client)
@@ -19,23 +16,16 @@ class ApiController extends AbstractController
         $this->client = $client;
     }
 
-    #[Route('/api', name: 'app_api')]
-    public function getDatas(): Response
+    public function getDatas(): array
     {
 
         $response = $this->client->request('GET', 'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/evenements-publics-openagenda/records?select=uid%2C%20title_fr%2C%20description_fr%2C%20image%2C%20firstdate_begin%2C%20firstdate_end%2C%20lastdate_begin%2C%20lastdate_end%2C%20location_coordinates%2C%20location_name%2C%20location_address%2C%20daterange_fr%2C%20longdescription_fr&limit=-1&refine=updatedat%3A%222024%22');
 
         $statusCode = $response->getStatusCode();
-        // $statusCode = 200
-
         $contentType = $response->getHeaders()['content-type'][0];
-        // $contentType = 'application/json'
-
+        
         $content = $response->getContent();
-        // $content = '{"id":521583, "name":"symfony-docs", ...}'
-
         $content = $response->toArray();
-        // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]
 
         // Récupérer les résultats de la réponse
         $results = $content['results'];
@@ -45,6 +35,7 @@ class ApiController extends AbstractController
         foreach ($results as $result) {
             
             $imageUrl = !empty($result['image']) ? $result['image'] : '/assets/img/nopicture.jpg';
+            
             $data = [
                 'title' => $result['title_fr'], // ok
                 'description' => $result['description_fr'], // ok
@@ -68,11 +59,7 @@ class ApiController extends AbstractController
             $completeData[] = $data;
         }
         
-
-        return $this->render('api/api.html.twig', [
-            'controller_name' => 'ApiController',
-            // 'data' => $jsonContent,
-            'data' => $completeData,
-        ]);
+        return $completeData;
     }
+
 }

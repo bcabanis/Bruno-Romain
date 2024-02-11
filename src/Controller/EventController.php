@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Document\Events;
 use App\Document\ChatMessage;
-use App\Service\CallApiService;
+use App\Service\NewApiService;
 use App\Repository\UserRepository;
 use App\Repository\EventRepository;
 use App\Repository\ChatMessageRepository;
@@ -19,7 +19,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/event')]
 class EventController extends AbstractController
 {
-    // Affichage de tous les événements (pas spécielement utile)
+    // Affichage de tous les événements en BDD (pas spécielement utile)
     #[Route('/affichage', name: 'app_event_affichage')]
     
     public function AfficheEvent(EventRepository $eventRepository, CacheInterface $cache, DocumentManager $dm): Response
@@ -57,27 +57,19 @@ class EventController extends AbstractController
         ]);
     }
 
-    // public function GetEvents(EventRepository $eventRepository, CacheInterface $cache, DocumentManager $dm): Response
-    // {
-    // $events = $eventRepository->findAll();
-    // $dataTabForJs = [];
+    // affichage events via API en direct
+    #[Route('/affichage2', name: 'app_event_affichage2')]
+    public function AfficheEvent2(NewApiService $newApi, CacheInterface $cache): Response
+    {
 
-    // // Itération sur chaque événement pour construire le tableau final
-    // foreach ($events as $event) {
-    // $dataForJs = [
-    //     'title' => $event->getTitle(),
-    //     'description' => $event->getDescription(),
-    //     'adresse' => $event->getAddress(),
-    //     'image' => $event->getImageUrl(),
-    //     'unique_id' => $event->getEventId(),
-    //     'dateFormat' => $event->getDateFormat(),
-    //     'category' => $event->getCategory(),
-    //                 ];
+    $data = $newApi->getDatas();
 
-    //     // On ajoute toutes les données des events (title, image...) dans un tableau final de tous les événements
-    //     $dataTabForJs[] = $dataForJs;
-    //                         }
-    //                     }
+    dump($data);
+      
+    return $this->render('event/affichage2.html.twig', [
+        'data' => $data,
+    ]);
+    }
 
 
     // Envoie des évenements en BDD
