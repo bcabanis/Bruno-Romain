@@ -62,8 +62,115 @@ class ApiController extends AbstractController
                 'start' => $result['firstdate_begin'],
                 'end' => $result['firstdate_end'],
                 'last_start' => $result['lastdate_begin'],
-                'last_end' => $result['lastdate_end'],              
+                'last_end' => $result['lastdate_end'],
+                'tags' => null, // Initialisation à null, au cas où la catégorie n'est pas détectée             
             ];
+
+            $categories = [
+                "Arts" => [
+                    "Comedie",
+                    "Atelier",
+                    "Sculpture",
+                    "Design",
+                    "Bijoux",
+                    "Ballet",
+                    "Chorales",
+                    "Comédie Musicale",
+                    "Danse",
+                    "Littérature",
+                    "Orchestres",
+                    "Peinture",
+                ],
+                "Business" => [
+                    "ONG",
+                    "Start Ups",
+                    "Associations",
+                    "Carrières",
+                    "Investissement",
+                    "Immobilier",
+                    "Marketing",
+                    "Medias",
+                    "Petites entreprises"
+                ],
+                "Brunch-apéro" => [
+                    "Apéro",
+                    "Bière",
+                    "Brunch",
+                    "Culinaire",
+                    "Restaurants",
+                    "Spiritueux"
+                ],
+                "Communauté" => [
+                    "Actions Locales",
+                    "Bénévolat",
+                    "Cours particuliers",
+                    "Histoire",
+                    "Langues",
+                    "Nationalité",
+                    "Parrainages",
+                    "Participatif",
+                ],
+                "Film-médias" => [
+                    "Anime",
+                    "Adult",
+                    "Ciné-débat",
+                    "Comédie",
+                    "Comics",
+                    "Film",
+                    "Gaming",
+                ],
+                "Musique" => [
+                    "Alternatif",
+                    "Blues",
+                    "Classique",
+                    "Dj/Dance",
+                    "Concert",
+                    "Electro",
+                    "Festival",
+                    "Folk",
+                    "Hip Hop/Rap",
+                    "Jazz",
+                    "Jam",
+                    "Techno",
+                    "Reggae",
+                ],
+                "Mode" => [
+                    "Accesoires",
+                    "Beauté",
+                    "Vide-grenier",
+                    "Maquillage",
+                ],
+                "Sports-Fitness" => [
+                    "Arts Martiaux",
+                    "Basket",
+                    "Cyclisme",
+                    "Football",
+                    "Golf",
+                    "Hockey sur Gazon",
+                    "Marche",
+                    "Moto",
+                    "Tennis",
+                    "Yoga",
+                ],
+                "Santé" => [
+                    "Bien-être",
+                    "Hypnose",
+                    "Méditation",
+                    "Santé mentale",
+                    "Spa"
+                ],
+            ];
+
+            foreach ($categories as $category => $tags) {
+                foreach ($tags as $tag) {
+                if (stripos($result['title_fr'], $tag) !== false|| stripos($result['description_fr'], $tag) !== false || stripos($result['longdescription_fr'], $tag) !== false) {
+                    $data['tags'][] = $tag;
+                    if (!isset($data['categories'][$category])) {
+                        $data['categories'][$category] = true;                   
+                    }
+                  }
+                }
+            }
 
             $completeData[] = $data;
         }
