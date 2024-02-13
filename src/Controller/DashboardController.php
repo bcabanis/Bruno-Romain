@@ -52,14 +52,13 @@ class DashboardController extends AbstractController
             $calendarEvents[] = $calendarEvent;
         }
    
-           $datas = json_encode($calendarEvents);
-        //    dump($calendarEvents);
+           $calendarDatas = json_encode($calendarEvents);
 
         return $this->render('dashboard/index.html.twig', [
             'tagsByCategory' => $tagsGroupedByCategory,
             'user' => $user,
-            'events' => $events,
-            'datas' => $datas,
+            'events' => $apiDatas,
+            'datas' => $calendarDatas,
         ]);
     }
 

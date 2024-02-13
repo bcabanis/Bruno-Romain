@@ -133,14 +133,14 @@
 						<p>Vous ne participez pas encore à aucun event</p>
 					</div>
 				</div>
-
 				<div class="columnspacer col-md-1 col-12"></div>
 
 				<article class="columnright col-md-6 col-12" id="articleEvent" style="max-height: 1150px; overflow-y: scroll">
 					<h2>Évenement disponible</h2>
 					{% for event in events %}
 						<div
-							class="cardeventbig" style="background-image: url('./assets/img_api/{{ event.imageUrl }}'); background-repeat: no-repeat;
+
+							class="cardeventbig" style="background-image: url('{{ event.image_url }}'); background-repeat: no-repeat;
 																  background-position: center;
 																  background-size: cover;">
 							<!-- CARD event BIG start  -->
