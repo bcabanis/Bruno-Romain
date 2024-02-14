@@ -28,22 +28,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-    // // Redirection vers la page d'accueil
-    // #[Route('/a', name: 'app_home_page')]
-    // public function page(SessionInterface $sessionInterface, UserRepository $userRepository): Response
-    // {
-        // // Récupère l'email de l'utilisateur connecté depuis la session
-        // $email = $sessionInterface->get('email');
-
-        // // Récupère l'utilisateur depuis la base de données en utilisant l'email
-        // $user = $userRepository->findOneBy(['email' => $email]);
-
-    //     return $this->render('base.html.twig', [
-    //         'user' => $user,
-    //     ]);
-    // }
-
-
     // Redirection vers la page de présentation
     #[Route('/homepresentation', name: 'app_home_presentation')]
     public function presentation(): Response

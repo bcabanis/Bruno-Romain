@@ -1,5 +1,7 @@
 <?php
 
+// CONTROLLEUR POUR TESTER L'API
+
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -7,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-// le but de cette classe est de faire apparaitre les résultats de l'API
+// le but de cette classe est de faire apparaitre les résultats de l'API 
 
 class ApiController extends AbstractController
 {
@@ -63,7 +65,9 @@ class ApiController extends AbstractController
                 'end' => $result['firstdate_end'],
                 'last_start' => $result['lastdate_begin'],
                 'last_end' => $result['lastdate_end'],
-                'tags' => null, // Initialisation à null, au cas où la catégorie n'est pas détectée             
+                'tags' => null, // Initialisation à null, au cas où le tag n'est pas détecté       
+                'categories' => null, // Initialisation à null, au cas où la catégorie n'est pas détectée
+                'firstCategory' => null, // Initialisation à null, au cas où la catégorie n'est pas détectée           
             ];
 
             $categories = [
@@ -171,6 +175,13 @@ class ApiController extends AbstractController
                   }
                 }
             }
+                     // Choix d'une catégorie aléatoire parmi celles détectées
+                     if (!empty($data['categories'])) {
+                        $randomCategory = array_rand($data['categories']);
+                        $data['firstCategory'] = $randomCategory;
+                    } else {
+                        $data['firstCategory'] = 'Inclassable';
+                    }
 
             $completeData[] = $data;
         }
