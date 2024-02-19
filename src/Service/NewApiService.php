@@ -15,9 +15,9 @@ class NewApiService
         $this->client = $client;
     }
 
-    public function getDataById(string $eventId): array {
+    public function getDataById(string $eventUid): array {
 
-        $response = $this->client->request('GET', 'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/evenements-publics-openagenda/records?select=uid%2C%20title_fr%2C%20description_fr%2C%20image%2C%20firstdate_begin%2C%20firstdate_end%2C%20lastdate_begin%2C%20lastdate_end%2C%20location_coordinates%2C%20location_name%2C%20location_address%2C%20daterange_fr%2C%20longdescription_fr&limit=-1&refine=updatedat%3A%222024%22&refine=location_city%3A%22Paris%22&' . $eventId);
+        $response = $this->client->request('GET', 'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/evenements-publics-openagenda/records?select=uid%2C%20title_fr%2C%20description_fr%2C%20image%2C%20firstdate_begin%2C%20firstdate_end%2C%20lastdate_begin%2C%20lastdate_end%2C%20location_coordinates%2C%20location_name%2C%20location_address%2C%20daterange_fr%2C%20longdescription_fr&limit=-1&refine=updatedat%3A%222024%22&refine=location_city%3A%22Paris%22&' . $eventUid);
 
         $statusCode = $response->getStatusCode();
         if ($statusCode !== 200) {
@@ -27,16 +27,21 @@ class NewApiService
         $results = $response->toArray();
 
         foreach ($results['results'] as $result) {
-            if ($result['uid'] === $eventId) {
+            if ($result['uid'] === $eventUid) {
                 $imageUrl = !empty($result['image']) ? $result['image'] : '/assets/img/nopicture.jpg';
                 return [
                     'title' => $result['title_fr'],
                     'description' => $result['description_fr'],
                     'image' => $imageUrl,
                     'address' => $result['location_address'],
-                    'eventId' => $result['uid'], 
+                    'eventUid' => $result['uid'], 
                     'date' => $result['daterange_fr'], 
                     'orga' => $result['location_name'], 
+                    'eventUid' => $result['uid'],
+                    'location_coordinates' => [
+                        'long' => $result['location_coordinates']['lon'],
+                        'lat' => $result['location_coordinates']['lat']
+                    ],
                 ];
 
             }
@@ -71,17 +76,17 @@ class NewApiService
             
             $imageUrl = !empty($result['image']) ? $result['image'] : '/assets/img/nopicture.jpg';
             $data = [
-                'title' => $result['title_fr'], // ok
-                'description' => $result['description_fr'], // ok
-                'image_url' => $imageUrl, // ok
-                'address' => $result['location_address'], // ok
-                'eventId' => $result['uid'], // ok
-                'orga' => $result['location_name'], //ok
-                'date' => $result['daterange_fr'], // ok
+                'title' => $result['title_fr'], 
+                'description' => $result['description_fr'], 
+                'image_url' => $imageUrl, 
+                'address' => $result['location_address'], 
+                'eventId' => $result['uid'], 
+                'orga' => $result['location_name'], 
+                'date' => $result['daterange_fr'], 
                 'location_coordinates' => [
                     'long' => $result['location_coordinates']['lon'],
                     'lat' => $result['location_coordinates']['lat']
-                ], // ok
+                ], 
                 'longdescription' => strip_tags($result['longdescription_fr']), 
 
                 'start' => $result['firstdate_begin'],
@@ -209,7 +214,6 @@ class NewApiService
 
             $completeData[] = $data;
         }
-        // dump($completeData);
         return $completeData;
     }
 

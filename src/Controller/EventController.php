@@ -117,17 +117,13 @@ class EventController extends AbstractController
         return new Response('Events inserted successfully!');
     }
 
-    #[Route('/{eventId}', name: 'app_event_show')]
-    public function show(EventRepository $eventRepository, ChatMessageRepository $chatMessageRepository, string $eventId, SessionInterface $sessionInterface, NewApiService $newApi): Response
+    #[Route('/{eventUid}', name: 'app_event_show')]
+    public function show(EventRepository $eventRepository, ChatMessageRepository $chatMessageRepository, string $eventUid, SessionInterface $sessionInterface, NewApiService $newApi): Response
     {
 
-        $event = $newApi->getDataById($eventId);
-        // Récupère l'événement associé à l'ID de l'URL
-        // $event = $eventRepository->findOneBy(['eventId' => $eventId]);
+        $event = $newApi->getDataById($eventUid);
         
-        // Si l'évènement n'existe pas on renvoie un message d'erreur
         if (!$event) {
-            // Renvoie vers la vue error.html.twig
         return $this->render('event/error.html.twig', [], new Response('', 404));
     }
 

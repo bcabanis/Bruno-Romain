@@ -74,7 +74,7 @@
 				</article>
 				<div class="columnspacerevent col-md-1 col-12"></div>
 				<div class="columnrightevent col-md-4 col-sm-12">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d34848.14939208129!2d2.3478265000886145!3d48.90537128598759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1689752545704!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d34848.14939208129!2d{{event.location_coordinates.long}}!3d{{event.location_coordinates.lat}}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1689752545704!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					<p class="iconloc">{{ event.address }}</p>
 					<p class="icondate">{{event.date}}</p>
 					<p class="iconcontact">263 de participants</p>
@@ -145,7 +145,7 @@
 								{% endif %}
 							{% endfor %}
 
-							{# <form class="chatbox" action="{{ path('app_event_post_chat_message', {'eventId': event.eventId}) }}" method="post" style="padding: 20px;"> #}
+							{# <form class="chatbox" action="{{ path('app_event_post_chat_message', {'eventUid': event.eventUid}) }}" method="post" style="padding: 20px;"> #}
 								<div class="d-flex">
 									<label for="content"></label>
 									<textarea id="content" name="content" placeholder="Ecrire un message" required></textarea>
