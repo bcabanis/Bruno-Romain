@@ -23,13 +23,6 @@ function handleTagChoiceClick(event) {
       tagsChoices.splice(tagsChoices.indexOf(button.textContent), 1);
     }
     
-    // if (button.classList.contains('tag-choice')) {
-    //   button.classList.remove('tag-choice'); // Le bouton est "tag-choice", on le transforme en "tag-choice-active"
-    //   button.classList.add('tag-choice-active');
-    // } else if (button.classList.contains('tag-choice-active')) {
-    //   button.classList.remove('tag-choice-active'); // Le bouton est "tag-choice-active", on le transforme en "tag-choice"
-    //   button.classList.add('tag-choice');
-    // }
   }
   
   // Récupérer tous les boutons avec la classe "tag-choice"
@@ -42,41 +35,6 @@ function handleTagChoiceClick(event) {
   buttons.forEach(button => {
     button.addEventListener('click', handleTagChoiceClick);
   });
-  
-  // On va générer le contenu du tableau actif 
-  function ListeDeBoutons() {
-
-    // On récupère tous les boutons actifs avec la classe "tag-choice-active"
-    // activeButtonsArray = document.querySelectorAll('.tag-choice-active');
-  
-    // activeButtonsArray.forEach(button => {
-      
-    // });
-
-    // // On crée une liste à puces pour afficher les éléments
-    // let MegaListe = document.createElement('ul');
-    // // Parcourir le tableau actif et créer un élément de liste (li) pour chaque élément
-    // activeButtonsArray.forEach(button => {
-    //   let MegaListeItem = document.createElement('li');
-    //   MegaListeItem.textContent = button.textContent; // On utilise le contenu du bouton comme texte de la liste
-    //   MegaListe.appendChild(MegaListeItem); // On ajoute l'élément de liste à la liste à puce
-    // });
-  
-    // // On récupère l'élément div dans lequel nous afficherons le contenu du tableau
-    // let activeButtonsContainer = document.getElementById('active-buttons-container');
-  
-    // // On efface le contenu précédent du conteneur
-    // activeButtonsContainer.innerHTML = '';
-  
-    // // On ajoute la liste à puces au conteneur
-    // activeButtonsContainer.appendChild(MegaListe);
-
-  }
-  
-  // On appelle la fonction pour générer le contenu d'un tableau actif initialement
-  ListeDeBoutons();
-  
-  ////////////
 
 // On crée une fonction qui va servir à afficher ou faire disparaitre certains "articles" grace à la searchbar.
 

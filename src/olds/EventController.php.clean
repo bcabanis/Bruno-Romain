@@ -118,12 +118,10 @@ class EventController extends AbstractController
     }
 
     #[Route('/{eventId}', name: 'app_event_show')]
-    public function show(EventRepository $eventRepository, ChatMessageRepository $chatMessageRepository, string $eventId, SessionInterface $sessionInterface, NewApiService $newApi): Response
+    public function show(EventRepository $eventRepository, ChatMessageRepository $chatMessageRepository, string $eventId, SessionInterface $sessionInterface): Response
     {
-
-        $event = $newApi->getDataById($eventId);
         // Récupère l'événement associé à l'ID de l'URL
-        // $event = $eventRepository->findOneBy(['eventId' => $eventId]);
+        $event = $eventRepository->findOneBy(['eventId' => $eventId]);
         
         // Si l'évènement n'existe pas on renvoie un message d'erreur
         if (!$event) {

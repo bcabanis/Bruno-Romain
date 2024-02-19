@@ -15,7 +15,36 @@ class NewApiService
         $this->client = $client;
     }
 
-    #[Route('/api', name: 'app_api')]
+    public function getDataById(string $eventId): array {
+
+        $response = $this->client->request('GET', 'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/evenements-publics-openagenda/records?select=uid%2C%20title_fr%2C%20description_fr%2C%20image%2C%20firstdate_begin%2C%20firstdate_end%2C%20lastdate_begin%2C%20lastdate_end%2C%20location_coordinates%2C%20location_name%2C%20location_address%2C%20daterange_fr%2C%20longdescription_fr&limit=-1&refine=updatedat%3A%222024%22&refine=location_city%3A%22Paris%22&' . $eventId);
+
+        $statusCode = $response->getStatusCode();
+        if ($statusCode !== 200) {
+            return null;
+        }
+
+        $results = $response->toArray();
+
+        foreach ($results['results'] as $result) {
+            if ($result['uid'] === $eventId) {
+                $imageUrl = !empty($result['image']) ? $result['image'] : '/assets/img/nopicture.jpg';
+                return [
+                    'title' => $result['title_fr'],
+                    'description' => $result['description_fr'],
+                    'image' => $imageUrl,
+                    'address' => $result['location_address'],
+                    'eventId' => $result['uid'], 
+                    'date' => $result['daterange_fr'], 
+                    'orga' => $result['location_name'], 
+                ];
+
+            }
+        }
+        return null;
+    
+    }
+
     public function getDatas(): array // attention array, pas une response car y'a pas de render
     {
 
