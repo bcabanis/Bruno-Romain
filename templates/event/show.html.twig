@@ -145,7 +145,7 @@
 								{% endif %}
 							{% endfor %}
 
-							{# <form class="chatbox" action="{{ path('app_event_post_chat_message', {'eventUid': event.eventUid}) }}" method="post" style="padding: 20px;"> #}
+							<form class="chatbox" action="{{ path('app_event_post_chat_message', {'eventUid': event.eventUid}) }}" method="post" style="padding: 20px;">
 								<div class="d-flex">
 									<label for="content"></label>
 									<textarea id="content" name="content" placeholder="Ecrire un message" required></textarea>

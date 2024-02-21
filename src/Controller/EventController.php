@@ -128,7 +128,7 @@ class EventController extends AbstractController
     }
 
         // Récupère les messages de chat associés à l'événement
-        $chatMessages = $chatMessageRepository->findBy(['event' => $event]);
+        $chatMessages = $chatMessageRepository->findBy(['eventId' => $eventUid]);
 
         // Récupère l'email de l'utilisateur connecté depuis la session
         $emailSession = $sessionInterface->get('email');
@@ -143,55 +143,57 @@ class EventController extends AbstractController
         ]);
     }
 
-    #[Route('/{eventId}/post_chat_message', name: 'app_event_post_chat_message', methods: ['GET', 'POST'])]
-    public function postChatMessage(Request $request, EventRepository $eventRepository, UserRepository $userRepository, ChatMessageRepository $chatMessageRepository, string $eventId, SessionInterface $sessionInterface): Response
+    #[Route('/{eventUid}/post_chat_message', name: 'app_event_post_chat_message', methods: ['GET', 'POST'])]
+    public function postChatMessage(Request $request, UserRepository $userRepository, ChatMessageRepository $chatMessageRepository, string $eventUid, SessionInterface $session, NewApiService $newApi): Response
     {
-        // Récupère l'email de l'utilisateur connecté depuis la session
-        $emailSession = $sessionInterface->get('email');
-        // Recherche l'utilisateur connecté dans la base de données en utilisant l'email
+
+        $emailSession = $session->get('email');
         $authenticatedUser = $userRepository->findOneBy(['email' => $emailSession]);
 
-        // Récupère l'événement associé à l'ID de l'URL
-        $event = $eventRepository->findOneBy(['eventId' => $eventId]);
+        $event = $newApi->getDataById($eventUid);
 
-        // Si l'évènement n'existe pas on renvoie un message d'erreur
         if (!$event) {
             throw $this->createNotFoundException('Aucun évènement trouvé.');
         }
 
-        // Récupère le contenu du message de chat à partir de la requête POST
-        $content = $request->request->get('content');
+        // dump($eventUid);
+        // dump($event);
 
-        // Vérifie si $content est null et lui attribuer une valeur par défaut si c'est le cas
-        if ($content === null) {
-            $content = ''; // Valeur par défaut
+        // Récupère le contenu du message
+        $messageContent = $request->request->get('content');
+
+        // dump($messageContent);
+
+        if ($messageContent === null) {
+            $messageContent = ''; 
         }
 
-        // Récupérer l'ID du message parent (s'il y en a un) depuis la requête POST
+        // Récupérer l'ID du message parent (s'il y en a un)
         $parentMessageId = $request->request->get('parentMessageId');
 
+        // dump($parentMessageId);
+        
         // Si un parentMessageId est fourni, recherche le message parent associé
         $parentMessage = null;
-        $parentMessageId = $request->request->get('parentMessageId');
         if ($parentMessageId) {
             $parentMessage = $chatMessageRepository->find($parentMessageId);
         }
 
-        // Créer un nouveau message de chat
+        // Créer un nouveau message
         $chatMessage = new ChatMessage();
-        $chatMessage->setContent($content);
-        $chatMessage->setEvent($event);
+        $chatMessage->setContent($messageContent);
+        $chatMessage->setEventId($eventUid);
 
-        // Associe l'utilisateur au message de chat
+        // Associe l'utilisateur & message parent
         $chatMessage->setUser($authenticatedUser);
-        // Définir le message parent (s'il y en a un)
         $chatMessage->setParentMessage($parentMessage);
-
-        // Enregistre le nouveau message de chat dans la base de données
+        // Persiste en BDD
         $chatMessageRepository->save($chatMessage);
 
-        // Redirige l'utilisateur vers la page d'affichage de l'événement
-        return $this->redirectToRoute('app_event_show', ['eventId' => $eventId]);
+        // return $this->redirectToRoute('app_event_show', ['eventId' => $eventUid]);
+        $url = $this->generateUrl('app_event_show', ['eventUid' => $eventUid]);
+        
+        return $this->redirect($url);
     }
 
 }

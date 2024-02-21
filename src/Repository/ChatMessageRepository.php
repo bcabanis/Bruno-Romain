@@ -10,8 +10,6 @@ class ChatMessageRepository extends ServiceDocumentRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        // Appelle le constructeur parent de ServiceDocumentRepository
-        // et lui passe le ManagerRegistry et la classe ChatMessage
         parent::__construct($registry, ChatMessage::class);
     }
 

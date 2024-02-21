@@ -15,9 +15,11 @@ class ChatMessage
     #[MongoDB\Field(type: 'string')]
     private string $content;
 
-    #[MongoDB\ReferenceOne(targetDocument: Events::class)]
-    private ?Events $event = null;
+    #[MongoDB\Field(type: 'string')]
+    private string $eventId;
 
+    // #[MongoDB\ReferenceOne(targetDocument: Events::class)]
+    // private ?Events $event = null;
 
     #[MongoDB\ReferenceOne(targetDocument: Users::class)]
     private ?Users $user = null;
@@ -54,15 +56,26 @@ class ChatMessage
         $this->content = $content;
     }
 
-    public function getEvent(): ?Events
+    public function getEventId(): string
     {
-        return $this->event;
+        return $this->eventId;
     }
 
-    public function setEvent(?Events $event): void
+    public function setEventId(string $eventId): void
     {
-        $this->event = $event;
+        $this->eventId = $eventId;
     }
+
+    // public function getEvent(): ?Events
+    // {
+    //     return $this->event;
+    // }
+
+    // public function setEvent(?Events $event): void
+    // {
+    //     $this->event = $event;
+    // }
+
 
     public function getUser(): ?Users
     {
