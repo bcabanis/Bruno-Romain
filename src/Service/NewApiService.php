@@ -217,4 +217,8 @@ class NewApiService
         return $completeData;
     }
 
+    public function assertCategory(): array // attention array, pas une response car y'a pas de render
+    {
+    }
+
 }

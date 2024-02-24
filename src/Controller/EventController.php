@@ -118,7 +118,7 @@ class EventController extends AbstractController
     }
 
     #[Route('/{eventUid}', name: 'app_event_show')]
-    public function show(EventRepository $eventRepository, ChatMessageRepository $chatMessageRepository, string $eventUid, SessionInterface $sessionInterface, NewApiService $newApi): Response
+    public function show(ChatMessageRepository $chatMessageRepository, string $eventUid, SessionInterface $sessionInterface, NewApiService $newApi): Response
     {
 
         $event = $newApi->getDataById($eventUid);
