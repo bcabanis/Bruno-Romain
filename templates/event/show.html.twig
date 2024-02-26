@@ -92,20 +92,9 @@
 				<div class="columnleft">
 					<div class="tags text-center">
 						<div>
-							<p href="#">Musique</p>
-							<p href="#">Theatre</p>
-							<p href="#">Jazz</p>
-							<p href="#">Hip&nbsp;Hop</p>
-							<p href="#">Cinéma</p>
-							<p href="#">Environnement</p>
-						</div>
-						<div>
-							<p href="#">Theatre</p>
-							<p href="#">Musique</p>
-							<p href="#">Environnement</p>
-							<p href="#">Jazz</p>
-							<p href="#">Hip&nbsp;Hop</p>
-							<p href="#">Cinéma</p>
+						{% for tag in event.tags %}
+							<p href="#">{{ tag }}</p>
+						{% endfor %}
 						</div>
 					</div>
 				</div>
