@@ -17,6 +17,20 @@ class NewApiService
         $this->client = $client;
     }
 
+    public function getDataByName(string $research): array {
+
+        // Get reponse de l'API, statuscode & contentype
+        $response = $this->client->request('GET', self::API_URL);
+        $statusCode = $response->getStatusCode();
+        $contentType = $response->getHeaders()['content-type'][0];
+
+        $content = $response->getContent();
+        $content = $response->toArray();
+        $results = $content['results'];
+    
+    }
+
+
     public function getDataById(string $eventUid): array {
 
         $response = $this->client->request('GET', self::API_URL . $eventUid);

@@ -10,7 +10,6 @@ class Events
 
     #[MongoDB\Id]
     protected $id;
-
     
     #[MongoDB\Field(type:"string")]
     protected $category;
@@ -187,5 +186,24 @@ class Events
     {
         $this->chatMessages = $chatMessages;
     }
+
+    // public function findEventsByName(string $query)
+    // {
+    //     $qb = $this->createQueryBuilder('p');
+    //     $qb 
+    //         -> where(
+    //             $qb->expr()->andX(
+    //                 $qb->expr()->orX(
+    //                     $qb->expr()->like('p.title', 'query'),
+    //                     $qb->expr()->like('p.content', 'query'),
+    //                 ),
+    //                 $qb->expr()->isNotNull('p.created_at')
+    //             )
+    //         )       
+    //     ->setParameter('query', '%' . $query . '%');
+    //     return $qb  
+    //         ->getQuery()
+    //         ->getResult();
+    // }
 }
 
