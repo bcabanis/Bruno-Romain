@@ -35,7 +35,7 @@ class LoginController extends AbstractController
         $user = new Users();
         // Pré-remplit le champ d'e-mail avec le dernier nom d'utilisateur utilisé
         $user->setEmail($lastUsername);
-        // dump($user);
+     //   dump($user);
         // Crée le formulaire de connexion en utilisant LoginFormType et l'entité Users
         $form = $this->createForm(LoginFormType::class, $user);
 
@@ -55,6 +55,9 @@ class LoginController extends AbstractController
             // Compare si le mot de passe fourni correspond au mot de passe de l'utilisateur
             if (password_verify($user->getPassword(), $authenticatedUser->password)) {
 
+                // Stocke l'e-mail de l'utilisateur connecté dans la session
+                $sessionInterface->set('email', $user->getEmail());
+
                 // Vérifie si l'utilisateur a déjà rempli les informations de profil
                 if ($authenticatedUser->hasFilledProfile()) {
 
@@ -62,8 +65,7 @@ class LoginController extends AbstractController
                     return new RedirectResponse($this->generateUrl('app_dashboard'));
                 }
 
-                // Stocke l'e-mail de l'utilisateur connecté dans la session
-                $sessionInterface->set('email', $user->getEmail());
+               
             }
 
             // Redirige vers la page profil

@@ -22,7 +22,8 @@ class HomeController extends AbstractController
     // Récupère l'utilisateur depuis la base de données en utilisant l'email
     $user = $userRepository->findOneBy(['email' => $email]);
 
-        return $this->render('home/index.html.twig', [
+ //       return $this->render('home/index.html.twig', [
+            return $this->render('basemini.html.twig', [ 
             'controller_name' => 'HomeController',
             'user' => $user,
         ]);
@@ -32,7 +33,7 @@ class HomeController extends AbstractController
     #[Route('/homepresentation', name: 'app_home_presentation')]
     public function presentation(): Response
     {
-        return $this->render('home/presentation.html.twig', [
+        return $this->render('home/presentation.html.twig', [            
             'controller_name' => 'HomeController',
         ]);
     }

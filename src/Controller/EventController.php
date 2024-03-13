@@ -64,10 +64,10 @@ class EventController extends AbstractController
 
     $data = $newApi->getDatas();
 
-    dump($data);
+    // dump($data);
       
     return $this->render('event/affichage2.html.twig', [
-        'data' => $data,
+        'datas' => $data,
     ]);
     }
 

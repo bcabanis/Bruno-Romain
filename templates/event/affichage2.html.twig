@@ -2,32 +2,34 @@
 
 {% block body %}
 
-{% for item in data %}
+{% for data in datas %}
   <div> 
   <br>
-        {{ item.title }}
+        {{ data.eventId }}
         <br><br>
-        {{ item.description }}
+        {{ data.title }}
         <br><br>
-        {{ item.location_coordinates.long }}
+        {{ data.description }}
         <br><br>
-        {{ item.location_coordinates.lat }}
+        {{ data.location_coordinates.long }}
         <br><br>
-        {{ item.address }}
+        {{ data.location_coordinates.lat }}
         <br><br>
-        <img src = "{{ item.image_url }}"></img>
+        {{ data.address }}
         <br><br>
-        {{ item.orga }}
+        <img src = "{{ data.image_url }}"></img>
         <br><br>
-        {{ item.longdescription }}
+        {{ data.orga }}
         <br><br>
-        {{ item.orga }}
+        {{ data.longdescription }}
         <br><br>
-        {{ item.date }}
+        {{ data.orga }}
         <br><br>
-        {{ item.start }}
+        {{ data.date }}
         <br><br>
-        {{ item.end }}
+        {{ data.start }}
+        <br><br>
+        {{ data.end }}
 
   </div>
 {% endfor %}

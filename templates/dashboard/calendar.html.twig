@@ -1,57 +1,95 @@
-
 {% block body %}
 <!DOCTYPE html>
-        <html>
-        <head>
-           <style>
-        #calendar {
-            width: 470px;
-            height : 300px;
-            margin: auto;
-            font-size: 7px;
+<html>
+<head>
+   <style>
+    #calendar {
+        width: 50%;
+        height: 50%;
+        margin: auto;
+        font-size: 5vm;
+    }
+   
+   /* Style pour les événements longs */
+    .long-event {
+    height: 50px; /* Hauteur des événements longs */
+    }
+
+    /* Style pour les événements courts */
+    .short-event {
+    height: 15px; /* Hauteur des événements courts */
+    }
+
+   </style>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const calendarEl = document.getElementById('calendar');
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        selectable: true,
+        locale: 'fr',
+        timeZone: 'Europe/Paris',
+        headerToolbar: {
+            start: 'prev,next',
+            center: 'title',
+            end: 'dayGridMonth'
+        },
+        events: {{ datas|raw }},
+        eventDisplay: 'block',
+        eventTextColor: 'white',
+       
+        eventContent: function(arg) {
+        var event = arg.event;
+        var eventColor = 'yellow'; // Couleur par défaut
+        var eventPosition = 'auto'; // Position par défaut
+        var eventClasses = Array.isArray(event.className) ? event.className.join(' ') : ''; // Vérification si event.className est un tableau
+
+        if (event.title === 'Simple') {
+            eventColor = '#9ACD32 '; // Vert
+            eventClass = 'long-event';
+            eventPosition = 'top'; // Position en haut
+        } else if (event.title === 'Exclusive') {
+            eventColor = 'black'; // Rouge
+            eventPosition = 'top'; // Position en haut
+            eventClass = 'long-event';
+        } else if (event.title === 'Piscine ouverte'){
+            eventColor = '#25FDE9 '; // 
+            eventPosition = 'bottom'; // Position en bas
+            eventClass = 'short-event'; // Appliquer la classe CSS pour les événements courts
+        } else if (event.title === 'Piscine fermée'){
+            eventColor = 'red'; // 
+            eventPosition = 'bottom'; // Position en bas
+            eventClass = 'short-event'; // Appliquer la classe CSS pour les événements courts
+        }
+
+// Générer le HTML en vérifiant si event.className est défini
+    var eventHtml = '<div class="' + (event.className ? event.className.join(' ') + ' ' : '') + eventClass + '" style="background-color: ' + eventColor + '">' + event.title + '</div>';
+
+    return {
+        html: eventHtml,
+        position: eventPosition // Si vous souhaitez également définir la position de l'événement
+    };
+},
+
+        eventClick: function(info) {
+            if (info.event) {
+                alert('Evènement : ' + info.event.title + ' - ' + info.event.extendedProps.adultes + ' adultes');
+            } else {
+                alert('Aucun événement sélectionné pour cette date.');
             }
+        }
+    });
 
-            </style>
+    calendar.render();
+});
 
-            <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
-            {# <script src='fullcalendar/dist/index.global.js'></script> #}
-
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-               
-                const calendarEl = document.getElementById('calendar')
-               
-                const calendar = new FullCalendar.Calendar(calendarEl, {
-                        initialView: 'dayGridMonth',
-                        selectable: true,
-                        locale : 'fr',
-                        timeZone : 'Europe/Paris',
-                        headerToolbar : {
-                                        start : 'prev,next',
-                                        center : 'title',
-                                        end : 'dayGridMonth'
-                                        },
-                        events: {{ datas|raw }},
-                        eventDisplay : 'block',
-                        eventTextColor: 'white',
-                        eventColor: '#B60006',
-                        eventClick: function(info) {
-                                        if (info.event) {
-                                            alert('Evènement : ' + info.event.title);
-                                          //  window.open(info.event.url);
-                                        }
-                                        else {
-                                            alert('No event clicked for this date.');
-                                        }
-                                    }
-                                                                        })
-
-                calendar.render()
-                                                                        })
-            </script>
-        </head>
-        <body>
-            <div id='calendar'></div>
-        </body>    
-        </html>
+    </script>
+</head>
+<body>
+    <div id='calendar'></div>
+</body>    
+</html>
 {% endblock %}

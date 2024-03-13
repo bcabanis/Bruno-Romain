@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DashboardController extends AbstractController
 {
     #[Route('/dashboard', name: 'app_dashboard')]
-    public function index(SessionInterface $sessionInterface, UserRepository $userRepository, EventRepository $eventRepository, NewApiService $api): Response
+    public function index(SessionInterface $sessionInterface, UserRepository $userRepository, EventRepository $eventRepository, NewApiService $newApi): Response
     {
 
         // Select the current user
@@ -32,12 +32,8 @@ class DashboardController extends AbstractController
             $tagsGroupedByCategory[] = $tag; // Utilise $tag à la fois comme clé et valeur
         }
 
-        // On charge les données de l'API 
-        $apiDatas = $api->getDatas();
-       
-        // Récupérer tous les événements
-        $events = $eventRepository->findAll();
-
+        // On charge les données depuis la base de données
+        $apiDatas = $newApi->getDatas();
 
         // On initialise le FullCalendar
         $calendarEvents = [];
@@ -48,16 +44,16 @@ class DashboardController extends AbstractController
                 'title' => $apiData['title'],
                 'start' => (new \DateTime($apiData['start']))->format('Y-m-d'),
                 'end' => (new \DateTime($apiData['end']))->format('Y-m-d'),
+                'adultes' => $apiData['adultes'],
+                'enfants' => $apiData['enfants'],
             ];
             $calendarEvents[] = $calendarEvent;
         }
    
            $calendarDatas = json_encode($calendarEvents);
 
-        return $this->render('dashboard/index.html.twig', [
-            'tagsByCategory' => $tagsGroupedByCategory,
+           return $this->render('dashboard/calendar.html.twig', [
             'user' => $user,
-            'events' => $apiDatas,
             'datas' => $calendarDatas,
         ]);
     }
@@ -110,36 +106,6 @@ class DashboardController extends AbstractController
         $userRepository->save($user);
         // renvoie la réponse
         return new JsonResponse(['ok']);
-    }
-
-    #[Route('/calendar', name: 'app_calendar')]
-    public function calendar(EventRepository $eventRepository): Response
-    {
-        // Recherche des événements dans la base de données
-        $events = $eventRepository->findAll();
-        
-        // Initialisez le tableau pour stocker tous les événements
-        $calendarEvents = [];
-    
-        // Boucle sur tous les événements pour récupérer les données et les afficher
-        foreach ($events as $event) {
-            $calendarEvent = [
-                'title' => $event->getTitle(),
-                'start' => $event->getDateFormat()->format('Y-m-d'),
-                'end' => $event->getDateFormat()->format('Y-m-d'),
-            ];
-            $calendarEvents[] = $calendarEvent;
-        }
-    
-        dump($calendarEvents);
-        dump($calendarEvent);
-
-        $datas = json_encode($calendarEvents);
-        dump($datas);
-        
-        return $this->render('dashboard/calendar.html.twig', [
-            'datas' => $datas,
-        ]);
     }
 
 }

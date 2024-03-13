@@ -1,0 +1,57 @@
+
+{% block body %}
+<!DOCTYPE html>
+        <html>
+        <head>
+           <style>
+        #calendar {
+            width: 50%;
+            height : 50%;
+            margin: auto;
+            font-size: 5vm;
+            }
+
+            </style>
+
+            <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+            {# <script src='fullcalendar/dist/index.global.js'></script> #}
+
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+               
+                const calendarEl = document.getElementById('calendar')
+               
+                const calendar = new FullCalendar.Calendar(calendarEl, {
+                        initialView: 'dayGridMonth',
+                        selectable: true,
+                        locale : 'fr',
+                        timeZone : 'Europe/Paris',
+                        headerToolbar : {
+                                        start : 'prev,next',
+                                        center : 'title',
+                                        end : 'dayGridMonth'
+                                        },
+                        events: {{ datas|raw }},
+                        eventDisplay : 'block',
+                        eventTextColor: 'white',
+                        eventColor: '#B60006',
+                        eventClick: function(info) {
+                                        if (info.event) {
+                                            alert('Evènement : ' + info.event.title + info.event.extendedProps.adultes + '\nadultes');
+                                          //  window.open(info.event.url);
+                                        }
+                                        else {
+                                            alert('No event clicked for this date.');
+                                        }
+                                    }
+                                                                        })
+
+                calendar.render()
+                                                                        })
+            </script>
+        </head>
+        <body>
+            <div id='calendar'></div>
+        </body>    
+        </html>
+{% endblock %}

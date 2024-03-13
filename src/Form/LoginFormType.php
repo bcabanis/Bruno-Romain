@@ -35,7 +35,7 @@ class LoginFormType extends AbstractType
             ])
             ->add('stayConnected', CheckboxType::class, [
                 'label' => 'Rester connecté',
-                'mapped' => false
+                'mapped' => false,
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Se connecter',
